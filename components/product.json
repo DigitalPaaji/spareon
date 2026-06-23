@@ -1,0 +1,603 @@
+{
+  "categories": [
+    {
+      "id": "satake",
+      "name": "SATAKE",
+      "slug": "satake",
+      "title": "Satake Rice Milling Spare Parts",
+      "shortDescription": "Premium spare parts for Satake whitener, silky, husker, sizer and paddy processing machines.",
+      "description": "We provide a wide range of precision-engineered Satake rice milling spare parts. The components are manufactured using high-quality materials and modern production techniques to deliver durability, dimensional accuracy and reliable performance in demanding rice milling operations.",
+      "image": "/images/categories/satake.webp",
+      "isActive": true,
+      "commonFeatures": [
+        "Manufactured using high-quality stainless steel and industrial-grade materials",
+        "Precisely engineered for consistent and accurate milling results",
+        "Resistant to corrosion, rust and operational wear",
+        "Smooth and polished finish for efficient milling operations",
+        "High dimensional accuracy for consistent product quality",
+        "Easy to install and integrate into compatible machines",
+        "Easy to clean and maintain",
+        "Available in multiple sizes and configurations",
+        "Suitable for continuous and heavy-duty milling operations"
+      ],
+      "products": [
+        {
+          "id": "satake-sr-screw-feeder",
+          "name": "SR Screw Feeder",
+          "slug": "satake-sr-screw-feeder",
+          "brand": "SATAKE",
+          "productType": "Whitener Spare Part",
+          "shortDescription": "Precision-engineered screw feeder for Satake whitener machines.",
+          "description": "The Satake SR Screw Feeder is manufactured using premium-grade metal and advanced machining techniques. It delivers consistent material feeding and dependable performance in rice whitening operations.",
+          "models": [
+            "VTA-3 SR",
+            "VTA-5",
+            "VTA-7 SR",
+            "VTA-10",
+            "VTA-12 GMT",
+            "VTA-12 SR",
+            "VTA-15 AB",
+            "VTA-15 GMT",
+            "VTA-16 SR"
+          ],
+          "images": [""],
+          "tags": [
+            "satake",
+            "screw feeder",
+            "whitener",
+            "rice mill spare parts"
+          ],
+          "isFeatured": true,
+          "isActive": true
+        },
+        {
+          "id": "satake-sr-upper-cylinder",
+          "name": "SR Upper Cylinder",
+          "slug": "satake-sr-upper-cylinder",
+          "brand": "SATAKE",
+          "productType": "Whitener Spare Part",
+          "shortDescription": "Durable upper cylinder for Satake SR whitener machines.",
+          "description": "The Satake SR Upper Cylinder is accurately machined for reliable fitting, smooth operation and long service life under continuous rice milling conditions.",
+          "models": [
+            "VTA-10",
+            "VTA-12 GMT",
+            "VTA-12 SR",
+            "VTA-15 GMT",
+            "VTA-16 SR"
+          ],
+          "images": [],
+          "tags": [
+            "satake",
+            "upper cylinder",
+            "whitener",
+            "vta"
+          ],
+          "isFeatured": true,
+          "isActive": true
+        },
+        {
+          "id": "satake-silky-milling-roll",
+          "name": "Satake Silky Milling Roll",
+          "slug": "satake-silky-milling-roll",
+          "brand": "SATAKE",
+          "productType": "Silky Polisher Spare Part",
+          "shortDescription": "Precision milling roll for Satake silky polishing machines.",
+          "description": "A durable and accurately manufactured milling roll designed to support smooth polishing and consistent rice finishing.",
+          "models": [
+            "KB-40",
+            "KB-60",
+            "KB-75",
+            "KB-80",
+            "KB-100",
+            "2 Toki",
+            "4 Toki"
+          ],
+          "images": [],
+          "tags": [
+            "satake silky",
+            "milling roll",
+            "rice polisher",
+            "kb series"
+          ],
+          "isFeatured": false,
+          "isActive": true
+        },
+        {
+          "id": "satake-silky-screw-roller",
+          "name": "Satake Silky Screw Roller",
+          "slug": "satake-silky-screw-roller",
+          "brand": "SATAKE",
+          "productType": "Silky Polisher Spare Part",
+          "shortDescription": "Heavy-duty screw roller for Satake KB series machines.",
+          "description": "The screw roller is engineered for uniform material movement, stable polishing and dependable performance in Satake silky machines.",
+          "models": [
+            "KB-40",
+            "KB-60",
+            "KB-75",
+            "KB-80",
+            "KB-100"
+          ],
+          "images": [],
+          "tags": [
+            "satake",
+            "screw roller",
+            "silky",
+            "kb series"
+          ],
+          "isFeatured": false,
+          "isActive": true
+        },
+        {
+          "id": "satake-whitener-inner-base-ring",
+          "name": "Satake Whitener SR Inner Base Ring",
+          "slug": "satake-whitener-sr-inner-base-ring",
+          "brand": "SATAKE",
+          "productType": "Whitener Spare Part",
+          "shortDescription": "Precision inner base ring for Satake SR whitener machines.",
+          "description": "Designed for accurate fitting, smooth machine operation and reliable performance under demanding milling conditions.",
+          "models": [
+            "VTA-3 SR",
+            "VTA-5",
+            "VTA-7 SR",
+            "VTA-10",
+            "VTA-12 SR",
+            "VTA-16 SR"
+          ],
+          "images": [],
+          "tags": [
+            "satake",
+            "inner base ring",
+            "sr whitener",
+            "vta"
+          ],
+          "isFeatured": false,
+          "isActive": true
+        },
+        {
+          "id": "satake-silky-rings-inlet",
+          "name": "Satake Silky Rings Inlet",
+          "slug": "satake-silky-rings-inlet",
+          "brand": "SATAKE",
+          "productType": "Silky Polisher Spare Part",
+          "shortDescription": "Reliable inlet ring components for Satake silky machines.",
+          "description": "Manufactured for accurate alignment and smooth material entry into Satake silky polishing systems.",
+          "models": [
+            "KB-35",
+            "KB-40",
+            "KB-60",
+            "KB-75",
+            "KB-80",
+            "KB-100"
+          ],
+          "images": [],
+          "tags": [
+            "satake",
+            "silky ring",
+            "inlet",
+            "polisher spare parts"
+          ],
+          "isFeatured": false,
+          "isActive": true
+        },
+        {
+          "id": "satake-sizer-cylinder",
+          "name": "Satake Sizer Cylinder",
+          "slug": "satake-sizer-cylinder",
+          "brand": "SATAKE",
+          "productType": "Sizer Spare Part",
+          "shortDescription": "Precision cylinder for Satake rice sizing machines.",
+          "description": "A durable sizing cylinder designed to support accurate grain separation and consistent sizing performance.",
+          "models": [],
+          "images": [],
+          "tags": [
+            "satake",
+            "sizer cylinder",
+            "rice sizer",
+            "grain sizing"
+          ],
+          "isFeatured": false,
+          "isActive": true
+        },
+        {
+          "id": "satake-silky-front-housing",
+          "name": "Satake Silky Front Housing",
+          "slug": "satake-silky-front-housing",
+          "brand": "SATAKE",
+          "productType": "Silky Polisher Spare Part",
+          "shortDescription": "Strong front housing for Satake silky polishing machines.",
+          "description": "The front housing provides structural support and accurate component alignment for stable silky polisher operation.",
+          "models": [
+            "KB-40",
+            "KB-60",
+            "KB-75",
+            "KB-80",
+            "KB-100"
+          ],
+          "images": [],
+          "tags": [
+            "satake",
+            "front housing",
+            "silky",
+            "kb series"
+          ],
+          "isFeatured": false,
+          "isActive": true
+        },
+        {
+          "id": "satake-silky-inlet-sieve",
+          "name": "Satake Silky Inlet Sieve",
+          "slug": "satake-silky-inlet-sieve",
+          "brand": "SATAKE",
+          "productType": "Silky Polisher Spare Part",
+          "shortDescription": "Accurately manufactured inlet sieve for Satake silky machines.",
+          "description": "Designed for controlled grain flow and efficient processing in Satake silky polishing systems.",
+          "models": [
+            "KB-35",
+            "KB-40",
+            "KB-60",
+            "KB-75",
+            "KB-80",
+            "KB-100"
+          ],
+          "images": [],
+          "tags": [
+            "satake",
+            "inlet sieve",
+            "silky",
+            "rice polishing"
+          ],
+          "isFeatured": false,
+          "isActive": true
+        },
+        {
+          "id": "satake-silky-break-holder",
+          "name": "Satake Silky Brake Holder",
+          "slug": "satake-silky-brake-holder",
+          "brand": "SATAKE",
+          "productType": "Silky Polisher Spare Part",
+          "shortDescription": "Durable brake holder for Satake silky machinery.",
+          "description": "A precision component designed to maintain stable positioning and dependable operation inside compatible Satake machines.",
+          "models": [],
+          "images": [],
+          "tags": [
+            "satake",
+            "brake holder",
+            "silky spare part",
+            "rice mill"
+          ],
+          "isFeatured": false,
+          "isActive": true
+        },
+        {
+          "id": "satake-whitener-star-plate",
+          "name": "Satake Whitener Star Plate",
+          "slug": "satake-whitener-star-plate",
+          "brand": "SATAKE",
+          "productType": "Whitener Spare Part",
+          "shortDescription": "Precision star plate for Satake whitening machines.",
+          "description": "Manufactured for accurate fitting and reliable power transmission in Satake whitener systems.",
+          "models": [
+            "VTA-3",
+            "VTA-5",
+            "VTA-7 SR",
+            "VTA-9",
+            "VTA-10",
+            "VTA-12 GMT",
+            "VTA-12 SR",
+            "VTA-15 AB",
+            "VTA-15 GMT",
+            "VTA-16 SR",
+            "VTA-20"
+          ],
+          "images": [],
+          "tags": [
+            "satake",
+            "star plate",
+            "whitener",
+            "vta series"
+          ],
+          "isFeatured": false,
+          "isActive": true
+        },
+        {
+          "id": "satake-paddy-table-knife-phase-hinges",
+          "name": "Satake Paddy Table Knife Phase Hinges",
+          "slug": "satake-paddy-table-knife-phase-hinges",
+          "brand": "SATAKE",
+          "productType": "Paddy Table Spare Part",
+          "shortDescription": "Durable knife phase hinges for Satake paddy tables.",
+          "description": "Precisely manufactured hinges designed for smooth movement and reliable operation in Satake paddy table systems.",
+          "models": [],
+          "images": [],
+          "tags": [
+            "satake",
+            "paddy table",
+            "knife phase hinges",
+            "rice processing"
+          ],
+          "isFeatured": false,
+          "isActive": true
+        },
+        {
+          "id": "satake-screens",
+          "name": "Satake Silky and Whitener Screens",
+          "slug": "satake-silky-whitener-screens",
+          "brand": "SATAKE",
+          "productType": "Screen",
+          "shortDescription": "Precision screens for Satake silky polishers and whiteners.",
+          "description": "High-quality screens manufactured for efficient grain processing, uniform output and dependable service life.",
+          "models": [
+            "KB-35",
+            "KB-40",
+            "KB-60",
+            "KB-75",
+            "KB-80",
+            "KB-100",
+            "VTA-3",
+            "VTA-5",
+            "VTA-7 SR",
+            "VTA-9",
+            "VTA-10",
+            "VTA-12 GMT",
+            "VTA-12 SR",
+            "VTA-15 AB",
+            "VTA-15 GMT",
+            "VTA-16 SR",
+            "VTA-20"
+          ],
+          "images": [],
+          "tags": [
+            "satake screens",
+            "silky screen",
+            "whitener screen",
+            "rice mill screen"
+          ],
+          "isFeatured": true,
+          "isActive": true
+        },
+        {
+          "id": "satake-husker-retainer",
+          "name": "Satake Husker Retainer",
+          "slug": "satake-husker-retainer",
+          "brand": "SATAKE",
+          "productType": "Husker Spare Part",
+          "shortDescription": "Reliable retainer component for Satake husker machines.",
+          "description": "A durable and accurately machined retainer designed to support stable husker operation and long service life.",
+          "models": [],
+          "images": [],
+          "tags": [
+            "satake",
+            "husker retainer",
+            "husker spare parts",
+            "rice mill"
+          ],
+          "isFeatured": false,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "buhler",
+      "name": "BUHLER",
+      "slug": "buhler",
+      "title": "Buhler Rice Milling Spare Parts",
+      "shortDescription": "High-quality spare parts for Buhler whitener, silky, husker, sizer and paddy processing equipment.",
+      "description": "We supply precision-engineered Buhler-compatible spare parts for professional rice milling operations. Our parts are designed for accurate fitting, reliable performance and long operational life.",
+      "image": "/images/categories/buhler.webp",
+      "isActive": true,
+      "commonFeatures": [
+        "Manufactured using premium stainless steel and industrial-grade materials",
+        "Precision machined for consistent milling performance",
+        "Resistant to corrosion, rust and wear",
+        "Smooth surface finish for efficient machine operation",
+        "Accurate dimensions for reliable compatibility",
+        "Easy installation and integration",
+        "Simple cleaning and maintenance",
+        "Available in different sizes and configurations",
+        "Suitable for heavy-duty rice milling applications"
+      ],
+      "products": [
+        {
+          "id": "buhler-silky-drpa-bush",
+          "name": "Buhler Silky DRPA Bush",
+          "slug": "buhler-silky-drpa-bush",
+          "brand": "BUHLER",
+          "productType": "Silky Polisher Spare Part",
+          "shortDescription": "Precision bush for Buhler DRPA silky polishing machines.",
+          "description": "The DRPA Bush is manufactured for accurate fitting, reduced operational wear and reliable performance in Buhler silky systems.",
+          "models": [
+            "DRPA"
+          ],
+          "images": [],
+          "tags": [
+            "buhler",
+            "drpa bush",
+            "silky",
+            "rice polisher"
+          ],
+          "isFeatured": true,
+          "isActive": true
+        },
+        {
+          "id": "buhler-whitener-bspb-upper-ring-pipe",
+          "name": "Buhler Whitener BSPB Upper Ring Pipe",
+          "slug": "buhler-whitener-bspb-upper-ring-pipe",
+          "brand": "BUHLER",
+          "productType": "Whitener Spare Part",
+          "shortDescription": "Durable upper ring pipe for Buhler BSPB whitener machines.",
+          "description": "A precision-engineered ring pipe designed for dependable fitting and smooth operation in Buhler BSPB whitening systems.",
+          "models": [
+            "BSPB"
+          ],
+          "images": [],
+          "tags": [
+            "buhler",
+            "bspb",
+            "upper ring pipe",
+            "whitener"
+          ],
+          "isFeatured": true,
+          "isActive": true
+        },
+        {
+          "id": "buhler-sizer-cylinder-screen-frame",
+          "name": "Buhler Sizer Cylinder and Screen Frame",
+          "slug": "buhler-sizer-cylinder-screen-frame",
+          "brand": "BUHLER",
+          "productType": "Sizer Spare Part",
+          "shortDescription": "Precision cylinder and screen frame for Buhler sizing machines.",
+          "description": "Designed to provide consistent grain sizing, dependable screening and reliable operation in compatible Buhler machines.",
+          "models": [],
+          "images": [],
+          "tags": [
+            "buhler",
+            "sizer cylinder",
+            "screen frame",
+            "grain sizing"
+          ],
+          "isFeatured": false,
+          "isActive": true
+        },
+        {
+          "id": "buhler-paddy-table-knife-phase-hinges",
+          "name": "Buhler Paddy Table Knife Phase Hinges",
+          "slug": "buhler-paddy-table-knife-phase-hinges",
+          "brand": "BUHLER",
+          "productType": "Paddy Table Spare Part",
+          "shortDescription": "Heavy-duty knife phase hinges for Buhler paddy tables.",
+          "description": "Precision-manufactured hinges designed to support smooth movement and reliable performance in Buhler paddy processing equipment.",
+          "models": [],
+          "images": [],
+          "tags": [
+            "buhler",
+            "paddy table",
+            "knife phase hinges",
+            "rice processing"
+          ],
+          "isFeatured": false,
+          "isActive": true
+        },
+        {
+          "id": "buhler-silky-drpa-front-mouth",
+          "name": "Buhler Silky DRPA Front Mouth",
+          "slug": "buhler-silky-drpa-front-mouth",
+          "brand": "BUHLER",
+          "productType": "Silky Polisher Spare Part",
+          "shortDescription": "Durable front mouth component for Buhler DRPA silky machines.",
+          "description": "Manufactured for precise alignment, stable grain flow and dependable polishing performance.",
+          "models": [
+            "DRPA"
+          ],
+          "images": [],
+          "tags": [
+            "buhler",
+            "drpa front mouth",
+            "silky",
+            "polisher spare parts"
+          ],
+          "isFeatured": false,
+          "isActive": true
+        },
+        {
+          "id": "buhler-silky-drpa-mixing-tube",
+          "name": "Buhler Silky DRPA Mixing Tube",
+          "slug": "buhler-silky-drpa-mixing-tube",
+          "brand": "BUHLER",
+          "productType": "Silky Polisher Spare Part",
+          "shortDescription": "Precision mixing tube for Buhler DRPA silky machines.",
+          "description": "Designed to maintain controlled material movement and consistent processing inside Buhler DRPA polishing systems.",
+          "models": [
+            "DRPA"
+          ],
+          "images": [],
+          "tags": [
+            "buhler",
+            "drpa mixing tube",
+            "silky",
+            "rice polisher"
+          ],
+          "isFeatured": false,
+          "isActive": true
+        },
+        {
+          "id": "buhler-whitener-base-star-hub",
+          "name": "Buhler Whitener Base Star Hub",
+          "slug": "buhler-whitener-base-star-hub",
+          "brand": "BUHLER",
+          "productType": "Whitener Spare Part",
+          "shortDescription": "Precision base star hub for Buhler whitening machines.",
+          "description": "A robust hub component engineered for accurate fitting, stable rotation and long-lasting whitener performance.",
+          "models": [],
+          "images": [],
+          "tags": [
+            "buhler",
+            "base star hub",
+            "whitener",
+            "rice mill spare parts"
+          ],
+          "isFeatured": true,
+          "isActive": true
+        },
+        {
+          "id": "buhler-whitener-spare-parts",
+          "name": "Buhler Whitener Spare Parts",
+          "slug": "buhler-whitener-spare-parts",
+          "brand": "BUHLER",
+          "productType": "Whitener Spare Parts",
+          "shortDescription": "Complete range of compatible spare parts for Buhler whiteners.",
+          "description": "A selection of precision-engineered components designed for dependable operation, durability and consistent rice whitening performance.",
+          "models": [],
+          "images": [],
+          "tags": [
+            "buhler whitener",
+            "whitener spare parts",
+            "rice mill",
+            "industrial components"
+          ],
+          "isFeatured": false,
+          "isActive": true
+        },
+        {
+          "id": "buhler-silky-spare-parts",
+          "name": "Buhler Silky Spare Parts",
+          "slug": "buhler-silky-spare-parts",
+          "brand": "BUHLER",
+          "productType": "Silky Polisher Spare Parts",
+          "shortDescription": "Complete range of components for Buhler silky polishing machines.",
+          "description": "High-quality compatible parts for maintaining smooth polishing, uniform rice finishing and dependable machine performance.",
+          "models": [
+            "DRPA"
+          ],
+          "images": [],
+          "tags": [
+            "buhler silky",
+            "drpa",
+            "polisher spare parts",
+            "rice polishing"
+          ],
+          "isFeatured": false,
+          "isActive": true
+        },
+        {
+          "id": "buhler-husker-spare-parts",
+          "name": "Buhler Husker Spare Parts",
+          "slug": "buhler-husker-spare-parts",
+          "brand": "BUHLER",
+          "productType": "Husker Spare Parts",
+          "shortDescription": "Durable spare parts for Buhler rice husking machines.",
+          "description": "Reliable components designed to support continuous husking operations, accurate fitting and long service life.",
+          "models": [],
+          "images": [],
+          "tags": [
+            "buhler husker",
+            "husker spare parts",
+            "rice husking",
+            "rice mill"
+          ],
+          "isFeatured": false,
+          "isActive": true
+        }
+      ]
+    }
+  ]
+}
