@@ -73,11 +73,11 @@ const OurStrengths = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden border-y border-slate-200 bg-white py-14 sm:py-16 lg:py-20">
+    <section className="relative overflow-hidden px-4 md:px-12 lg:px-24 xl:px-40 py-24">
       {/* Subtle background */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(14,165,233,0.06),transparent_42%)]" />
 
-      <div className="relative mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="mb-12 text-center sm:mb-14">
           <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.28em] text-cyan-600">
@@ -132,7 +132,7 @@ const OurStrengths = () => {
                     {item.title}
                   </h3>
 
-                  <p className="mt-2 max-w-[165px] text-[11px] leading-[1.65] text-slate-500">
+                  <p className="max-w-[165px] text-sm leading-[1.65] text-slate-500">
                     {item.description}
                   </p>
                 </div>

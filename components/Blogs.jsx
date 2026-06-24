@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import Link from "next/link";
 import blogData from "./blogs.json";
 import {
   FaArrowRight,
@@ -22,48 +25,50 @@ const BlogSection = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#f7fafc] py-16 sm:py-20 lg:py-24">
-      {/* Background decoration */}
-      <div className="pointer-events-none absolute -left-32 top-20 h-80 w-80 rounded-full bg-cyan-100/50 blur-[120px]" />
+    <section className="relative overflow-hidden bg-[#f7fafc] px-4 md:px-12 lg:px-24 xl:px-40 py-24">
+      {/* Background decoration (optional, kept subtle) */}
+      <div className="pointer-events-none absolute -left-32 top-20 h-80 w-80 rounded-full bg-[#1762A7]/5 blur-[120px]" />
+      <div className="pointer-events-none absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-[#0B1A30]/5 blur-[120px]" />
 
-      <div className="pointer-events-none absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-[#031d31]/5 blur-[120px]" />
-
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Heading */}
+      <div className="relative mx-auto w-full">
+        
+        {/* Heading Section */}
         <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-2xl">
-            <div className="mb-4 flex items-center gap-3">
-              <span className="h-px w-10 bg-cyan-600" />
-
-              <p className="text-xs font-bold uppercase tracking-[0.28em] text-cyan-600">
-                Knowledge & Insights
-              </p>
-            </div>
-
-            <h2 className="text-3xl font-bold tracking-tight text-[#00263d] sm:text-4xl lg:text-5xl">
-              Latest from Our{" "}
-              <span className="text-cyan-600">Blog</span>
+          <div className="max-w-2xl flex flex-col items-start">
+            
+            {/* Main Heading */}
+            <h2 className="text-[26px] md:text-[32px] font-bold text-[#0B1A30] tracking-wide uppercase mb-4">
+              LATEST FROM OUR <span className="text-[#1762A7]">BLOG</span>
             </h2>
 
-            <p className="mt-4 max-w-xl text-sm leading-7 text-slate-500 sm:text-base">
-              Explore maintenance tips, product knowledge and useful insights
+            {/* Description */}
+            <p className="text-gray-600 text-[15px] md:text-base leading-[1.8] max-w-xl">
+              Explore maintenance tips, product knowledge, and useful insights
               for professional rice milling operations.
             </p>
           </div>
 
-          <a
-            href="/blogs"
-            className="group inline-flex w-fit items-center gap-3 text-xs font-bold uppercase tracking-[0.16em] text-[#00263d]"
-          >
-            View all articles
-
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#00263d] text-white transition-all duration-300 group-hover:translate-x-1 group-hover:bg-cyan-600">
-              <FaArrowRight />
-            </span>
-          </a>
+          {/* Styled Button matching your reference */}
+          <div className="w-fit">
+            <Link
+              href="/blogs"
+              className="group relative flex items-center gap-4 overflow-hidden rounded-full bg-gradient-to-r from-[#056483] to-[#063B73] pl-6 pr-1.5 py-1.5 text-sm font-bold text-white shadow-[0_10px_25px_rgba(16,123,235,0.3)] transition-all duration-300 hover:shadow-[0_15px_30px_rgba(16,123,235,0.45)]"
+            >
+              {/* Hover Sweep Effect */}
+              <span className="absolute inset-0 translate-x-[-105%] bg-gradient-to-r from-[#056483] to-[#063B73] transition-transform duration-500 group-hover:translate-x-0" />
+              
+              {/* Button Text */}
+              <span className="relative z-10 tracking-wide uppercase text-[11px] md:text-xs">View all articles</span>
+              
+              {/* White Circle Icon Container */}
+              <span className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white transition-transform duration-300 group-hover:translate-x-0.5">
+                <FaArrowRight className="text-[10px] text-[#107BEB] ml-0.5" />
+              </span>
+            </Link>
+          </div>
         </div>
 
-        {/* Blogs */}
+        {/* Blogs Grid */}
         <div className="grid gap-6 lg:grid-cols-2">
           {blogs.map((blog, index) => {
             const isFeatured = index === 0;
@@ -71,11 +76,11 @@ const BlogSection = () => {
             return (
               <article
                 key={blog.id || blog.slug}
-                className={`group relative overflow-hidden rounded-[1.75rem] border border-slate-200/80 bg-white shadow-[0_15px_45px_rgba(15,23,42,0.06)] transition-all duration-500 hover:-translate-y-2 hover:border-cyan-600/25 hover:shadow-[0_30px_80px_rgba(0,38,61,0.13)] ${
+                className={`group relative overflow-hidden rounded-xl border border-slate-200/80 bg-white shadow-lg transition-all duration-500 hover:-translate-y-1.5 hover:border-[#1762A7]/30 hover:shadow-xl ${
                   isFeatured ? "lg:row-span-3" : ""
                 }`}
               >
-                <a
+                <Link
                   href={`/blogs/${blog.slug}`}
                   className={
                     isFeatured
@@ -83,72 +88,73 @@ const BlogSection = () => {
                       : "grid min-h-[220px] grid-cols-1 sm:grid-cols-[42%_58%]"
                   }
                 >
-                  {/* Image */}
+                  {/* Image Section */}
                   <div
                     className={`relative overflow-hidden bg-slate-100 ${
-                      isFeatured
-                        ? "min-h-[300px] flex-1"
-                        : "min-h-[220px]"
+                      isFeatured ? "min-h-[300px] flex-1" : "min-h-[220px]"
                     }`}
                   >
+                    {/* Image - SCALING REMOVED AS REQUESTED */}
                     <img
-                      src={"https://image.made-in-china.com/2f0j00QvcRgoCMZsqh/Satake-Series-Vertical-Rice-Whitener-Emery-Roller.webp"}
+                      src={blog.image || "https://image.made-in-china.com/2f0j00QvcRgoCMZsqh/Satake-Series-Vertical-Rice-Whitener-Emery-Roller.webp"}
                       alt={blog.title}
                       loading="lazy"
-                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                      className="absolute inset-0 h-full w-full object-cover transition-opacity duration-500 group-hover:opacity-90"
                     />
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#031d31]/60 via-transparent to-transparent" />
+                    {/* Subtle Overlay Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B1A30]/80 via-transparent to-transparent" />
 
-                    {/*  */}
-                    <span className="absolute left-5 top-5 rounded-full border border-white/30 bg-white/90 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-[#00263d] shadow-sm backdrop-blur-md">
+                    {/* Category Badge */}
+                    <span className="absolute left-5 top-5 rounded-full bg-white/90 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-[#0B1A30] shadow-sm backdrop-blur-md">
                       {blog.category}
                     </span>
 
+                    {/* Featured Badge */}
                     {isFeatured && (
-                      <span className="absolute bottom-5 left-5 rounded-full bg-cyan-500 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white">
+                      <span className="absolute bottom-5 left-5 rounded-full bg-[#1762A7] px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-white shadow-md">
                         Featured Article
                       </span>
                     )}
                   </div>
 
-                  {/*   */}
+                  {/* Content Section */}
                   <div
                     className={`relative flex flex-col justify-between ${
                       isFeatured ? "p-7 sm:p-8" : "p-5 sm:p-6"
                     }`}
                   >
-                    {/*   */}
-                    <span className="pointer-events-none absolute right-5 top-2 text-7xl font-bold text-[#00263d]/[0.035]">
+                    {/* Background faint number */}
+                    <span className="pointer-events-none absolute right-5 top-2 text-7xl font-bold text-[#0B1A30]/5">
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
                     <div className="relative z-10">
-                      {/*  */}
-                      <div className="mb-4 flex flex-wrap items-center gap-4 text-[11px] font-medium text-slate-400">
+                      {/* Meta Info */}
+                      <div className="mb-4 flex flex-wrap items-center gap-4 text-[11px] font-medium text-slate-500">
                         <span className="flex items-center gap-2">
-                          <FaCalendarDays className="text-cyan-600" />
+                          <FaCalendarDays className="text-[#1762A7]" />
                           {formatDate(blog.publishedAt)}
                         </span>
 
                         <span className="flex items-center gap-2">
-                          <FaClock className="text-cyan-600" />
-                          {blog.readingTime}
+                          <FaClock className="text-[#1762A7]" />
+                          {blog.readingTime || "5 min read"}
                         </span>
                       </div>
 
+                      {/* Title */}
                       <h3
-                        className={`font-bold leading-tight text-[#00263d] transition-colors duration-300 group-hover:text-cyan-600 ${
-                          isFeatured
-                            ? "text-2xl sm:text-3xl"
-                            : "text-lg sm:text-xl"
+                        className={`font-bold leading-tight text-[#0B1A30] transition-colors duration-300 group-hover:text-[#1762A7] ${
+                          isFeatured ? "text-2xl sm:text-3xl" : "text-lg sm:text-xl"
                         }`}
                       >
                         {blog.title}
                       </h3>
 
+                      {/* Excerpt */}
                       <p
-                        className={`mt-3 text-slate-500 ${
+                        className={`mt-3 text-gray-600 ${
                           isFeatured
                             ? "text-sm leading-7 sm:text-base"
                             : "line-clamp-2 text-sm leading-6"
@@ -158,27 +164,28 @@ const BlogSection = () => {
                       </p>
                     </div>
 
-                    {/* Read  */}
+                    {/* Read Article Link Area */}
                     <div className="relative z-10 mt-6 flex items-center justify-between border-t border-slate-200 pt-5">
-                      <span className="text-[11px] font-bold uppercase tracking-[0.17em] text-[#00263d]">
+                      <span className="text-[11px] font-bold uppercase tracking-[0.17em] text-[#0B1A30]">
                         Read article
                       </span>
 
-                      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#00263d] text-xs text-white transition-all duration-500 group-hover:translate-x-1 group-hover:-rotate-45 group-hover:bg-cyan-600">
+                      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0B1A30] text-xs text-white transition-all duration-300 group-hover:translate-x-1 group-hover:bg-[#1762A7]">
                         <FaArrowRight />
                       </span>
                     </div>
                   </div>
-                </a>
+                </Link>
               </article>
             );
           })}
         </div>
 
+        {/* Fallback Empty State */}
         {blogs.length === 0 && (
-          <div className="rounded-2xl border border-dashed border-slate-300 bg-white px-6 py-16 text-center">
-            <p className="text-sm text-slate-500">
-              No published blogs are available.
+          <div className="rounded-xl border border-dashed border-slate-300 bg-white px-6 py-16 text-center shadow-sm">
+            <p className="text-sm text-slate-500 font-medium">
+              No published blogs are currently available.
             </p>
           </div>
         )}

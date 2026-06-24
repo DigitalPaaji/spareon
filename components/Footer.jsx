@@ -45,15 +45,15 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative overflow-hidden bg-[#031d31] text-white">
+    <footer className="px-4 md:px-12 lg:px-24 xl:px-40 py-24 relative overflow-hidden bg-[#031d31] text-white">
       {/* Subtle background glow */}
       <div className="pointer-events-none absolute -left-32 top-0 h-80 w-80 rounded-full bg-cyan-400/10 blur-[120px]" />
 
       <div className="pointer-events-none absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-blue-500/10 blur-[120px]" />
 
       {/* Contact CTA */}
-      <div className="relative border-b border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-5 py-9 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+      <div className="relative border-b border-white/10  pb-12">
+        <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-cyan-300">
               Need reliable spare parts?
@@ -76,13 +76,13 @@ const Footer = () => {
       </div>
 
       {/* Footer content */}
-      <div className="relative mx-auto max-w-7xl px-5 py-14 sm:px-6 lg:px-8">
+      <div className="relative py-12">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_0.7fr_1fr_1.15fr]">
           
             
           <div>
             <a href="/" className="inline-flex items-end">
-             <img src="logo.webp" alt="" className="h-24" />
+             <img src="logo.png" alt="" className="h-24" />
             </a>
 
             <p className="mt-5 max-w-sm text-sm leading-7 text-slate-400">

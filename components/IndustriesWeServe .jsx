@@ -55,7 +55,7 @@ const IndustriesWeServe = () => {
         {/* Left content */}
         <div className="relative z-10 flex w-full flex-col justify-center px-5 py-7 lg:w-[70%] lg:px-12 xl:px-20">
           {/* Heading */}
-          <h2 className="mb-6 text-center  text-3xl  font-sans font-bold uppercase tracking-[0.04em] text-white sm:text-base">
+          <h2 className="mb-6 text-center  text-2xl  font-sans font-bold uppercase tracking-[0.04em] text-white">
             Industries <span className="text-cyan-300">We Serve</span>
           </h2>
 
@@ -78,7 +78,7 @@ const IndustriesWeServe = () => {
                     <Icon />
                   </div>
 
-                  <p className="text-[15px] font-medium leading-4 text-white/90 transition-colors duration-300 group-hover:text-cyan-200 sm:text-xs">
+                  <p className="text-sm font-medium leading-4 text-white/90 transition-colors duration-300 group-hover:text-cyan-200 ">
                     {industry.title}
                   </p>
                 </div>

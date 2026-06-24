@@ -1,100 +1,121 @@
-import Link from 'next/link'
-import React from 'react'
+"use client";
 
+import Link from 'next/link';
+import React, { useState } from 'react';
+import { FaPlay, FaChevronRight, FaArrowRight } from 'react-icons/fa';
+import { RxCross2 } from "react-icons/rx";
 const AboutusSection = () => {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
   return (
-    <div className=' container mx-auto px-4 my-24 grid lg:grid-cols-2 gap-14 items-center' >
+    <section className="px-4 md:px-12 lg:px-24 xl:px-40 py-24">
+      <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        
+        {/* Left Column: Text & CTA */}
+        <div className="flex flex-col items-start pr-0 lg:pr-8">
+          
+          {/* Main Heading */}
+          <h2 className="text-[26px] md:text-[32px] font-bold text-[#0B1A30] tracking-wide uppercase mb-4">
+            WELCOME TO <span className="text-[#1762A7]">SPAREON INDIA</span>
+          </h2>
 
- <div className='flex flex-col gap-4' >
-<b className='text-3xl font-sans'>
-  Welcome to
-<span className='p-text'> SPAREON INDIA</span>
-</b>
-<p className='text-gray-700 text-justify'>
-  Spareon India is the authorized channel partner of Taiwan-based Spareon Taiwan, a renowned
-manufacturer of high-quality spare parts for advanced rice milling machinery. All Spareon
-products are engineered and manufactured in Taiwan using modern technology, precision
-engineering, and stringent quality control systems to ensure consistent performance,
-durability, and long service life
-</p>
+          {/* Description */}
+          <p className="text-gray-600 text-[15px] md:text-base leading-[1.8] mb-8">
+            We are the authorized channel partner of Taiwan-based Spareon Taiwan, a renowned 
+            manufacturer of high-quality spare parts for advanced rice milling machinery. Our products 
+            are engineered with precision, manufactured in Taiwan, and trusted by rice millers 
+            across India.
+          </p>
 
-<Link href={"/about"}  className='text-white p-bg w-fit p-2 font-medium group relative flex gap-3 items-center  '>
-Know More About Us
-
-  <svg
-    class="w-6 h-6 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-1 rotate-45"
-    viewBox="0 0 16 19"
-    xmlns="http://www.w3.org/2000/svg"
+          {/* Simple Navy Button */}
+<div className="w-fit">
+  <Link
+    href="#contact"
+    className="group relative flex items-center gap-4 overflow-hidden rounded-r-full  bg-gradient-to-r from-[#056483] to-[#063B73]  pl-6 pr-1.5 py-1.5 text-sm font-bold text-white shadow-[0_10px_25px_rgba(16,123,235,0.3)] transition-all duration-300 hover:shadow-[0_15px_30px_rgba(16,123,235,0.45)]"
   >
-    <path
-      d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-      class="fill-gray-800 group-hover:fill-gray-800"
-    ></path>
-  </svg>
-
-</Link>
- 
-{/* <button
-  type="submit"
-  className="flex justify-center gap-2 items-center mx-auto shadow-xl text-lg bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-emerald-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2  group"
->
-Know More About Us
-   <svg
-    class="w-8 h-8 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-2 rotate-45"
-    viewBox="0 0 16 19"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-      class="fill-gray-800 group-hover:fill-gray-800"
-    ></path>
-  </svg> 
-</button> */}
-
-
-{/* <button
-  className="   relative inline-flex items-center justify-center  py-3 overflow-hidden font-medium p-text transition duration-300 ease-out border-2 border-indigo-600 rounded- shadow-md group"
->
-  <span
-    className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full p-bg group-hover:translate-x-0 ease"
-  >
-    <svg
-      className="w-6 h-6"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M14 5l7 7m0 0l-7 7m7-7H3"
-      ></path>
-    </svg>
-  </span>
-  <span
-    className="absolute  flex items-center justify-center w-full h-full p-text transition-all duration-300 transform group-hover:translate-x-full ease"
-    >Know More About Us</span
-  >
-  <span class="relative invisible">Explore</span>
-</button> */}
-
-
- </div>
-
-<div>
-
-
-<img src="aboutus1.png" alt="" />
-
-
-
+    {/* Hover Sweep Effect (Adjusted to a slightly darker blue to show up against the solid base) */}
+    <span className="absolute inset-0 translate-x-[-105%] bg-linear-to-r from-[#056483] to-[#063B73] transition-transform duration-500 group-hover:translate-x-0" />
+    
+    {/* Button Text */}
+    <span className="relative z-10 tracking-wide">Know More About Us</span>
+    
+    {/* White Circle Icon Container */}
+    <span className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white transition-transform duration-300 group-hover:translate-x-0.5">
+      {/* Play Icon (matches the triangle in the image) */}
+      <FaArrowRight className="text-[10px] text-[#107BEB] ml-0.5" />
+    </span>
+  </Link>
 </div>
 
+        </div>
 
-    </div>
-  )
-}
+        {/* Right Column: Video Thumbnail Banner */}
+        <div 
+          className="relative group cursor-pointer rounded-md overflow-hidden shadow-2xl bg-[#0A162B] flex items-center h-[280px] md:h-[320px] w-full"
+          onClick={() => setIsVideoOpen(true)}
+        >
+          {/* Background Image (Update src with your machinery image) */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 "
+            style={{ backgroundImage: "url('/about.webp')" }} 
+          />
+          
+          {/* Deep dark blue gradient overlay fading from right to left */}
+          <div className="absolute inset-0 bg-linear-to-r from-[#0A162B]/10 via-[#0A162B]/80 to-[#0A162B] z-0" />
 
-export default AboutusSection
+          {/* Overlay Content */}
+          <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center sm:justify-between w-full px-6 md:px-12 h-full gap-6 sm:gap-0">
+            
+            {/* Play Button - Positioned left-ish on desktop */}
+            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 shrink-0 sm:ml-8 lg:ml-16">
+              <FaPlay className="text-[#1762A7] text-xl ml-1" />
+            </div>
+
+            {/* Text Block & Arrow - Positioned right */}
+            <div className="flex items-center gap-4 sm:gap-6">
+              <div className="flex flex-col text-center">
+                <span className="text-white font-bold text-lg md:text-[19px] tracking-wide">
+                  WATCH OUR INTRO
+                </span>
+                <span className="text-gray-300  font-light mt-1">
+                  Engineering Excellence in<br className="hidden sm:block" /> Every Part
+                </span>
+              </div>
+              <FaChevronRight className="text-gray-500 font-light text-lg hidden sm:block" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Video Modal Overlay */}
+      {isVideoOpen && (
+        <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 sm:p-8 transition-opacity duration-300">
+          
+          {/* Close Button */}
+          <button
+            onClick={() => setIsVideoOpen(false)}
+            className="absolute top-6 right-6 md:top-10 cursor-pointer md:right-10 text-white/70 hover:text-white transition-colors z-[101] p-2"
+            aria-label="Close video"
+          >
+            <RxCross2 size={36} />
+          </button>
+
+          {/* Video Container */}
+          <div className="relative w-full max-w-5xl aspect-video bg-black rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10 animate-in fade-in zoom-in-95 duration-300">
+            {/* Replace the src below with your actual YouTube or video URL */}
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1"
+              title="About Spareon India Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+};
+
+export default AboutusSection;

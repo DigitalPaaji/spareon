@@ -59,7 +59,7 @@ const Whychooseus = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#031d31] text-white">
+    <section className="relative overflow-hidden bg-[#031d31] text-white px-4 md:px-12 lg:px-24 xl:px-40 py-24">
     
 
 <div className="pointer-events-none absolute left-0 top-0 z-10 h-[100px] w-full sm:h-[150px]">
@@ -92,11 +92,11 @@ const Whychooseus = () => {
 
       <div className="pointer-events-none absolute left-[35%] top-0 h-full w-[45%] skew-x-[-25deg] bg-gradient-to-r from-transparent via-cyan-400/5 to-transparent" />
 
-      <div className="relative container mx-auto px-4    ">
+      <div className="relative ">
         
       
-          <div className="flex flex-col justify-center py-24">
-            <h2 className="mb-16 text-center text-3xl   text-white  font-sans">
+          <div className="flex flex-col justify-center">
+            <h2 className="py-16 text-center text-3xl   text-white  font-sans">
               Why Choose{" "}
               <span className="text-cyan-300">Spareon India?</span>
             </h2>
@@ -125,7 +125,7 @@ const Whychooseus = () => {
                     </div>
                   </div>
                 );
-              })}
+              })} 
             </div>
           </div>
     

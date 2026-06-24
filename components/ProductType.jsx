@@ -28,11 +28,11 @@ const ProductType = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="mb-10 text-center sm:mb-14">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#031d31]">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-[#031d31]">
             Brands We Deal In
           </p>
 
-          <h2 className="text-3xl  font-bold text-[#00263d] ">
+          <h2 className="text-3xl  font-bold text-[#0B1A30] ">
            <span className="text-cyan-600"> Premium Machine </span> 
               Spare Parts
           </h2>
