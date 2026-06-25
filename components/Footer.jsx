@@ -46,7 +46,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="px-4 md:px-12 lg:px-24 xl:px-40 py-24 relative overflow-hidden bg-[#031d31] text-white">
+    <footer className="px-4 md:px-12 lg:px-24 xl:px-40 pt-24 relative overflow-hidden bg-[#031d31] text-white">
       {/* Subtle background glow */}
       <div className="pointer-events-none absolute -left-32 top-0 h-80 w-80 rounded-full bg-cyan-400/10 blur-[120px]" />
 
@@ -65,14 +65,19 @@ const Footer = () => {
             </h2>
           </div>
 
-          <a
+          <div className="">
+          <Link
             href="/contact"
-            className="group inline-flex w-fit items-center gap-3 rounded-full bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-[#031d31] transition-all duration-300 hover:bg-cyan-300"
+            className="group relative border-2 border-[#0a7599] flex items-center gap-3 overflow-hidden rounded-full p-bg px-6 py-2 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(6,56,74,0.22)] transition-all duration-300 hover:shadow-[0_18px_35px_rgba(6,56,74,0.3)]"
           >
-            Contact us
-
-            <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
+            <span className="absolute inset-0 translate-x-[-105%] bg-linear-to-r from-[#0a7599] to-[#056483] transition-transform duration-500 group-hover:translate-x-0" />
+            <span className="relative z-10">Contact us</span>
+            <span className="relative z-10 flex h-7 w-7 items-center justify-center rounded-full bg-white/15 group-hover:bg-white/90 group-hover:text-black/90 transition-transform duration-300 group-hover:translate-x-1">
+              <FaArrowRight className="text-xs " />
+            </span>
+          </Link>
+        </div>
+       
         </div>
       </div>
 
