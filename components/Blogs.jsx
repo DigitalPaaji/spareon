@@ -1,66 +1,109 @@
 "use client";
 
-import React from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
-import blogData from "./blogs.json";
-import {
-  FaArrowRight,
-  FaCalendarDays,
-  FaClock,
-} from "react-icons/fa6";
+import React, { useRef } from "react";
+import { FaArrowRight } from "react-icons/fa";
+import { MdWaves } from "react-icons/md";
+import blogData from "./blogs.json"; // Adjust the path to your JSON file as needed
+
+gsap.registerPlugin(ScrollTrigger);
 
 const BlogSection = () => {
+  const sectionRef = useRef(null);
+  const headingRef = useRef(null);
+  const cardRefs = useRef([]);
+
+  // Filter, limit to 4, and map the JSON data to match the component's required structure
   const blogs = (blogData?.blogs || [])
-    .filter((blog) => blog.isPublished !== false)
-    .slice(0, 4);
+    .filter((blog) => blog.isPublished)
+    .slice(0, 4)
+    .map((blog, index) => ({
+      id: blog.id,
+      title: blog.title,
+      description: blog.excerpt,
+      image: blog.image,
+      category: blog.category,
+      date: new Date(blog.publishedAt).toLocaleDateString("en-GB", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+      }),
+      href: `/blogs/${blog.slug}`,
+      // Replicate the theme pattern from your original code
+      theme: index === 0 ? "light" : "dark",
+    }));
 
-  const formatDate = (date) => {
-    if (!date) return "";
+  useGSAP(
+    () => {
+      const cards = cardRefs.current.filter(Boolean);
 
-    return new Date(date).toLocaleDateString("en-IN", {
-      day: "2-digit",
-      month: "short",
-      year: "numeric",
-    });
-  };
+      gsap.from(headingRef.current, {
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 82%",
+          once: true,
+        },
+      });
+
+      gsap.from(cards, {
+        y: 70,
+        opacity: 0,
+        scale: 0.97,
+        stagger: 0.12,
+        duration: 0.85,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: cards[0],
+          start: "top 86%",
+          once: true,
+        },
+      });
+    },
+    {
+      scope: sectionRef,
+    }
+  );
 
   return (
-    <section className="relative overflow-hidden bg-[#f7fafc] px-4 md:px-12 lg:px-24 xl:px-40 py-24">
-      {/* Background decoration (optional, kept subtle) */}
-      <div className="pointer-events-none absolute -left-32 top-20 h-80 w-80 rounded-full bg-[#1762A7]/5 blur-[120px]" />
-      <div className="pointer-events-none absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-[#0B1A30]/5 blur-[120px]" />
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden py-20 text-[#0B1A30] sm:py-24"
+    >
+      {/* Soft background glow - adjusted for the blue theme */}
+      <div className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[800px] -translate-x-1/2 rounded-full bg-[#1762A7]/[0.05] blur-[130px]" />
 
-      <div className="relative mx-auto w-full">
-        
-        {/* Heading Section */}
-        <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-2xl flex flex-col items-start">
-            
-            {/* Main Heading */}
-            <h2 className="text-[26px] md:text-[32px] font-bold text-[#0B1A30] tracking-wide uppercase mb-4">
-              LATEST FROM OUR <span className="text-[#1762A7]">BLOG</span>
-            </h2>
-
-            {/* Description */}
-            <p className="text-gray-600 text-[15px] md:text-base leading-[1.8] max-w-xl">
-              Explore maintenance tips, product knowledge, and useful insights
-              for professional rice milling operations.
+      <div className="relative z-10 mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div
+          ref={headingRef}
+          className="mb-10 flex flex-col gap-6 sm:mb-14 lg:flex-row lg:items-end lg:justify-between"
+        >
+          <div>
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.15em] text-[#1762A7]">
+              Insights & Ideas
             </p>
+
+            <h2 className="text-4xl font-semibold tracking-[-0.04em] sm:text-5xl lg:text-6xl text-[#0B1A30]">
+              Latest from
+              <span className="block text-[#1762A7]/80">our journal.</span>
+            </h2>
           </div>
 
-          {/* Styled Button matching your reference */}
-          <div className="w-fit">
+          {/* Updated Button from AboutusSection */}
+          <div className="w-fit mb-2 lg:mb-4">
             <Link
               href="/blogs"
-              className="group relative flex items-center gap-4 overflow-hidden rounded-full bg-gradient-to-r from-[#056483] to-[#063B73] pl-6 pr-1.5 py-1.5 text-sm font-bold text-white shadow-[0_10px_25px_rgba(16,123,235,0.3)] transition-all duration-300 hover:shadow-[0_15px_30px_rgba(16,123,235,0.45)]"
+              className="group relative flex items-center gap-4 overflow-hidden rounded-r-full bg-gradient-to-r from-[#056483] to-[#063B73] pl-6 pr-1.5 py-1.5 text-sm font-bold text-white shadow-[0_10px_25px_rgba(16,123,235,0.3)] transition-all duration-300 hover:shadow-[0_15px_30px_rgba(16,123,235,0.45)]"
             >
-              {/* Hover Sweep Effect */}
               <span className="absolute inset-0 translate-x-[-105%] bg-gradient-to-r from-[#056483] to-[#063B73] transition-transform duration-500 group-hover:translate-x-0" />
-              
-              {/* Button Text */}
-              <span className="relative z-10 tracking-wide uppercase text-[11px] md:text-xs">View all articles</span>
-              
-              {/* White Circle Icon Container */}
+              <span className="relative z-10 tracking-wide">View all blogs</span>
               <span className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white transition-transform duration-300 group-hover:translate-x-0.5">
                 <FaArrowRight className="text-[10px] text-[#107BEB] ml-0.5" />
               </span>
@@ -69,126 +112,89 @@ const BlogSection = () => {
         </div>
 
         {/* Blogs Grid */}
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
           {blogs.map((blog, index) => {
-            const isFeatured = index === 0;
+            const isLight = blog.theme === "light";
 
             return (
               <article
-                key={blog.id || blog.slug}
-                className={`group relative overflow-hidden rounded-xl border border-slate-200/80 bg-white shadow-lg transition-all duration-500 hover:-translate-y-1.5 hover:border-[#1762A7]/30 hover:shadow-xl ${
-                  isFeatured ? "lg:row-span-3" : ""
-                }`}
+                key={blog.id}
+                ref={(element) => {
+                  cardRefs.current[index] = element;
+                }}
+                className="h-full"
               >
                 <Link
-                  href={`/blogs/${blog.slug}`}
-                  className={
-                    isFeatured
-                      ? "flex h-full min-h-[500px] flex-col"
-                      : "grid min-h-[220px] grid-cols-1 sm:grid-cols-[42%_58%]"
-                  }
+                  href={blog.href}
+                  className={`group flex h-full min-h-[320px] flex-col rounded-[14px] border p-4 transition-all duration-500 hover:-translate-y-2 ${
+                    isLight
+                      ? "border-[#1762A7]/10 bg-[#F4F7FA] text-[#0B1A30]"
+                      : "border-[#1762A7]/30 bg-[#0B1A30] text-white hover:border-[#1762A7]/60"
+                  }`}
                 >
-                  {/* Image Section */}
-                  <div
-                    className={`relative overflow-hidden bg-slate-100 ${
-                      isFeatured ? "min-h-[300px] flex-1" : "min-h-[220px]"
-                    }`}
-                  >
-                    {/* Image - SCALING REMOVED AS REQUESTED */}
-                    <img
-                      src={blog.image || "https://image.made-in-china.com/2f0j00QvcRgoCMZsqh/Satake-Series-Vertical-Rice-Whitener-Emery-Roller.webp"}
-                      alt={blog.title}
-                      loading="lazy"
-                      className="absolute inset-0 h-full w-full object-cover transition-opacity duration-500 group-hover:opacity-90"
-                    />
+                  {/* Top area */}
+                  <div className="flex items-center justify-between gap-4">
+                    <div
+                      className={`relative h-36 w-36 shrink-0 overflow-hidden rounded-xl sm:h-40 sm:w-40 xl:h-36 xl:w-36 2xl:h-40 2xl:w-40 ${
+                        isLight ? "bg-[#1762A7]/5" : "bg-white/[0.05]"
+                      }`}
+                    >
+                      <img
+                        src={blog.image}
+                        alt={blog.title}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-700"
+                      />
 
-                    {/* Subtle Overlay Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B1A30]/80 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-[#0B1A30]/10" />
+                    </div>
 
-                    {/* Category Badge */}
-                    <span className="absolute left-5 top-5 rounded-full bg-white/90 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-[#0B1A30] shadow-sm backdrop-blur-md">
-                      {blog.category}
-                    </span>
-
-                    {/* Featured Badge */}
-                    {isFeatured && (
-                      <span className="absolute bottom-5 left-5 rounded-full bg-[#1762A7] px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-white shadow-md">
-                        Featured Article
+                    <div className="flex min-h-36 flex-1 flex-col items-end justify-between py-2 text-right sm:min-h-40 xl:min-h-36 2xl:min-h-40">
+                      <span
+                        className={`text-[10px] font-semibold uppercase tracking-[0.18em] ${
+                          isLight ? "text-[#1762A7]" : "text-white"
+                        }`}
+                      >
+                        {blog.category}
                       </span>
-                    )}
+
+                      <span
+                        className={`text-xs font-medium ${
+                          isLight ? "text-[#0B1A30]/65" : "text-white/65"
+                        }`}
+                      >
+                        {blog.date}
+                      </span>
+                    </div>
                   </div>
 
-                  {/* Content Section */}
-                  <div
-                    className={`relative flex flex-col justify-between ${
-                      isFeatured ? "p-7 sm:p-8" : "p-5 sm:p-6"
-                    }`}
-                  >
-                    {/* Background faint number */}
-                    <span className="pointer-events-none absolute right-5 top-2 text-7xl font-bold text-[#0B1A30]/5">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
+                  {/* Title */}
+                  <h3 className="mt-8 text-[22px] font-semibold leading-[1.15] tracking-[-0.03em] sm:text-2xl">
+                    {blog.title}
+                  </h3>
 
-                    <div className="relative z-10">
-                      {/* Meta Info */}
-                      <div className="mb-4 flex flex-wrap items-center gap-4 text-[11px] font-medium text-slate-500">
-                        <span className="flex items-center gap-2">
-                          <FaCalendarDays className="text-[#1762A7]" />
-                          {formatDate(blog.publishedAt)}
-                        </span>
+                  {/* Bottom description */}
+                  <div className="mt-auto flex items-start gap-4 pt-6">
+                    <MdWaves
+                      size={30}
+                      className={`mt-0.5 shrink-0 ${
+                        isLight ? "text-[#1762A7]" : "text-[#107BEB]"
+                      }`}
+                    />
 
-                        <span className="flex items-center gap-2">
-                          <FaClock className="text-[#1762A7]" />
-                          {blog.readingTime || "5 min read"}
-                        </span>
-                      </div>
-
-                      {/* Title */}
-                      <h3
-                        className={`font-bold leading-tight text-[#0B1A30] transition-colors duration-300 group-hover:text-[#1762A7] ${
-                          isFeatured ? "text-2xl sm:text-3xl" : "text-lg sm:text-xl"
-                        }`}
-                      >
-                        {blog.title}
-                      </h3>
-
-                      {/* Excerpt */}
-                      <p
-                        className={`mt-3 text-gray-600 ${
-                          isFeatured
-                            ? "text-sm leading-7 sm:text-base"
-                            : "line-clamp-2 text-sm leading-6"
-                        }`}
-                      >
-                        {blog.excerpt || blog.description}
-                      </p>
-                    </div>
-
-                    {/* Read Article Link Area */}
-                    <div className="relative z-10 mt-6 flex items-center justify-between border-t border-slate-200 pt-5">
-                      <span className="text-[11px] font-bold uppercase tracking-[0.17em] text-[#0B1A30]">
-                        Read article
-                      </span>
-
-                      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0B1A30] text-xs text-white transition-all duration-300 group-hover:translate-x-1 group-hover:bg-[#1762A7]">
-                        <FaArrowRight />
-                      </span>
-                    </div>
+                    <p
+                      className={`w-full max-w-[400px] truncate text-sm leading-6 ${
+                        isLight ? "text-[#0B1A30]/60" : "text-white/60"
+                      }`}
+                    >
+                      “{blog.description}”
+                    </p>
                   </div>
                 </Link>
               </article>
             );
           })}
         </div>
-
-        {/* Fallback Empty State */}
-        {blogs.length === 0 && (
-          <div className="rounded-xl border border-dashed border-slate-300 bg-white px-6 py-16 text-center shadow-sm">
-            <p className="text-sm text-slate-500 font-medium">
-              No published blogs are currently available.
-            </p>
-          </div>
-        )}
       </div>
     </section>
   );

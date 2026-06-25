@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import {
   FaArrowRight,
@@ -81,9 +82,9 @@ const Footer = () => {
           
             
           <div>
-            <a href="/" className="inline-flex items-end">
+            <Link href="/" className="inline-flex items-end">
              <img src="logo.png" alt="" className="h-24" />
-            </a>
+            </Link>
 
             <p className="mt-5 max-w-sm text-sm leading-7 text-slate-400">
               Premium rice mill spare parts for Satake and Bühler machinery,
