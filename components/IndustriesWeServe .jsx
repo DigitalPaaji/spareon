@@ -40,7 +40,7 @@ const IndustriesWeServe = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden border-y border-white/60 bg-[#031d31] text-white py-10">
+    <section className="relative overflow-hidden border-y border-white/60 bg-[#031d31] text-white px-4 md:px-12 lg:px-24 xl:px-40 py-12">
       {/* Background gradients */}
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(110deg,#031d31_0%,#031d31_42%,#03345f_72%,#062b50_100%)]" />
 
@@ -51,9 +51,9 @@ const IndustriesWeServe = () => {
       {/* Subtle diagonal lighting */}
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,transparent_5%,rgba(36,179,255,0.08)_32%,transparent_52%)]" />
 
-      <div className="relative mx-auto flex min-h-[160px] max-w-[1600px] items-stretch">
+      <div className="relative flex min-h-[160px] items-stretch">
         {/* Left content */}
-        <div className="relative z-10 flex w-full flex-col justify-center px-5 py-7 lg:w-[70%] lg:px-12 xl:px-20">
+        <div className="relative z-10 flex w-full flex-col justify-center  lg:w-[70%] ">
           {/* Heading */}
           <h2 className="mb-6 text-center  text-2xl  font-sans font-bold uppercase tracking-[0.04em] text-white">
             Industries <span className="text-cyan-300">We Serve</span>

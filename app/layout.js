@@ -2,6 +2,7 @@
 import Header from "@/components/Header";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import PreLoader from "@/components/PreLoader";
 
 
 export const metadata = {
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
      
     >
       <body >
+        <PreLoader/>
         <Header />
         
         {children}

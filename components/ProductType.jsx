@@ -10,7 +10,7 @@ const ProductType = () => {
       image:
         "https://japaneseknifecompany.com/wp-content/uploads/2025/04/satake-logo.webp",
       href: "#satake",
-      product:"cat1.png"
+      product:"cat1.webp"
     },
     {
       id: 2,
@@ -18,8 +18,7 @@ const ProductType = () => {
       subtitle: "Milling & Sorting Machine Parts",
       image: "https://upload.wikimedia.org/wikipedia/commons/9/91/Buhler_logo_RGB.png",
       href: "#buhler",
-      product:"cat2.png" 
-
+      product:"cat2.webp" 
 },
   ];
 
@@ -32,7 +31,7 @@ const ProductType = () => {
             Brands We Deal In
           </p>
 
-          <h2 className="text-3xl  font-bold text-[#0B1A30] ">
+          <h2 className="text-3xl lg:text-4xl  font-bold text-[#0B1A30] ">
            <span className="text-cyan-600"> Premium Machine </span> 
               Spare Parts
           </h2>

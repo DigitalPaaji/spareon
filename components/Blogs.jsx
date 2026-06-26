@@ -74,12 +74,12 @@ const BlogSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden py-20 text-[#0B1A30] sm:py-24"
+      className="relative overflow-hidden py-20 text-[#0B1A30]"
     >
       {/* Soft background glow - adjusted for the blue theme */}
       <div className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[800px] -translate-x-1/2 rounded-full bg-[#1762A7]/[0.05] blur-[130px]" />
 
-      <div className="relative z-10 mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 px-4 md:px-12 lg:px-24 xl:px-40 py-24">
         {/* Header */}
         <div
           ref={headingRef}
