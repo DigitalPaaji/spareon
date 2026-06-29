@@ -19,9 +19,9 @@ const Header = () => {
   const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
 
   const socialLinks = [
-    { name: "Facebook", href: "#", icon: <FaFacebookF /> },
-    { name: "Instagram", href: "#", icon: <FaInstagram /> },
-    { name: "YouTube", href: "#", icon: <FaYoutube /> },
+    { name: "Facebook", href: "/", icon: <FaFacebookF /> },
+    { name: "Instagram", href: "/", icon: <FaInstagram /> },
+    { name: "YouTube", href: "/", icon: <FaYoutube /> },
   ];
 
   const closeMenu = () => {
@@ -91,7 +91,7 @@ const Header = () => {
       <div className="flex items-center justify-between py-4 px-4 md:px-12 xl:px-40">
         {/* Logo */}
         <Link
-          href="#home"
+          href="/"
           onClick={closeMenu}
           className="group relative flex shrink-0 items-center"
           aria-label="Spareon Home"
@@ -106,7 +106,7 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-3 xl:flex">
           <Link
-            href="#home"
+            href="/"
             className="group relative flex items-center gap-2 px-3 py-3 text-sm font-medium uppercase text-white transition-colors duration-300 hover:text-[#66bfe2]"
           >
             <span className="h-1.5 w-1.5 scale-0 rounded-full bg-[#66bfe2] transition-all duration-300 group-hover:scale-100" />
@@ -115,7 +115,7 @@ const Header = () => {
           </Link>
 
           <Link
-            href="#aboutus"
+            href="/about"
             className="group relative flex items-center gap-2 px-3 py-3 text-sm font-medium uppercase text-white transition-colors duration-300 hover:text-[#66bfe2]"
           >
             <span className="h-1.5 w-1.5 scale-0 rounded-full bg-[#66bfe2] transition-all duration-300 group-hover:scale-100" />
@@ -150,13 +150,13 @@ const Header = () => {
             >
               <div className="bg-white rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col overflow-hidden p-1.5">
                 <Link
-                  href="#satake"
+                  href="/satake"
                   className="px-4 py-2.5 text-base font-semibold text-slate-700 hover:text-[#66bfe2] hover:bg-slate-50 rounded-lg transition-colors"
                 >
                   Satake
                 </Link>
                 <Link
-                  href="#buhler"
+                  href="/buhler"
                   className="px-4 py-2.5 text-base font-semibold text-slate-700 hover:text-[#66bfe2] hover:bg-slate-50 rounded-lg transition-colors"
                 >
                   Bühler
@@ -166,7 +166,7 @@ const Header = () => {
           </div>
 
           <Link
-            href="#blog"
+            href="/blogs"
             className="group relative flex items-center gap-2 px-3 py-3 text-sm font-medium uppercase text-white transition-colors duration-300 hover:text-[#66bfe2]"
           >
             <span className="h-1.5 w-1.5 scale-0 rounded-full bg-[#66bfe2] transition-all duration-300 group-hover:scale-100" />
@@ -175,7 +175,7 @@ const Header = () => {
           </Link>
 
           <Link
-            href="#contact"
+            href="/contact"
             className="group relative flex items-center gap-2 px-3 py-3 text-sm font-medium uppercase text-white transition-colors duration-300 hover:text-[#66bfe2]"
           >
             <span className="h-1.5 w-1.5 scale-0 rounded-full bg-[#66bfe2] transition-all duration-300 group-hover:scale-100" />
@@ -245,7 +245,7 @@ const Header = () => {
       >
         {/* Sidebar Header */}
         <div className="flex items-center justify-between py-4 px-2 border-b border-slate-100">
-          <Link href="#home" onClick={closeMenu}>
+          <Link href="/" onClick={closeMenu}>
             <img
               src="/logo.webp"
               alt="Logo"
@@ -263,14 +263,14 @@ const Header = () => {
         {/* Sidebar Links */}
         <div className="flex-1 overflow-y-auto py-2 px-4 flex flex-col">
           <Link
-            href="#home"
+            href="/"
             onClick={closeMenu}
             className="py-4 border-b border-slate-100 text-sm font-bold uppercase tracking-[0.11em] text-slate-700 transition-colors hover:text-[#66bfe2]"
           >
             Home
           </Link>
           <Link
-            href="#aboutus"
+            href="/about"
             onClick={closeMenu}
             className="py-4 border-b border-slate-100 text-sm font-bold uppercase tracking-[0.11em] text-slate-700 transition-colors hover:text-[#66bfe2]"
           >
@@ -298,14 +298,14 @@ const Header = () => {
               }`}
             >
               <Link
-                href="#satake"
+                href="/satake"
                 onClick={closeMenu}
                 className="pl-4 py-2.5 text-sm font-semibold text-slate-500 hover:text-[#66bfe2] transition-colors"
               >
                 Satake
               </Link>
               <Link
-                href="#buhler"
+                href="/buhler"
                 onClick={closeMenu}
                 className="pl-4 py-2.5 text-sm font-semibold text-slate-500 hover:text-[#66bfe2] transition-colors"
               >
@@ -315,14 +315,14 @@ const Header = () => {
           </div>
 
           <Link
-            href="#blog"
+            href="/blogs"
             onClick={closeMenu}
             className="py-4 border-b border-slate-100 text-sm font-bold uppercase tracking-[0.11em] text-slate-700 transition-colors hover:text-[#66bfe2]"
           >
             Blog
           </Link>
           <Link
-            href="#contact"
+            href="/contact"
             onClick={closeMenu}
             className="py-4 border-b border-slate-100 text-sm font-bold uppercase tracking-[0.11em] text-slate-700 transition-colors hover:text-[#66bfe2]"
           >
@@ -331,7 +331,7 @@ const Header = () => {
 
           {/* Mobile CTA */}
           <Link
-            href="#contact"
+            href="/contact"
             onClick={closeMenu}
             className="mt-6 flex w-full items-center justify-center gap-3 rounded-xl bg-linear-to-r from-[#06384a] to-[#0c5b77] px-5 py-3.5 text-sm font-semibold text-white shadow-lg"
           >

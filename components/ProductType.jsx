@@ -43,7 +43,7 @@ const ProductType = () => {
         </div>
 
 
-      <div className="grid  lg:grid-cols-2 gap-14">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-14">
   {brands.map((brand) => (
     <a
       key={brand.id}
@@ -55,7 +55,7 @@ const ProductType = () => {
         <img
           src={brand.product}
           alt={`${brand.name} product`}
-          className=""
+          className="mx-auto"
         />
 
 
