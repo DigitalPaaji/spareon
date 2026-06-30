@@ -88,7 +88,7 @@ const Footer = () => {
             
           <div>
             <Link href="/" className="inline-flex items-end">
-             <img src="logo.png" alt="" className="h-24" />
+             <img src="/logo.png" alt="" className="h-24" />
             </Link>
 
             <p className="mt-5 max-w-sm text-sm leading-7 text-slate-400">

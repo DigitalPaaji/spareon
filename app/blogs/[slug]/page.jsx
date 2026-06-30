@@ -36,7 +36,9 @@ export default function BlogDetailPage({ params }) {
 
   const blogs = blogData?.blogs || [];
   const blog = blogs.find((item) => item.slug === slug);
-  const recentBlogs = blogs.slice(0, 3); // Mocking recent blogs from data
+  const randomBlogs = [...blogs]
+  .sort(() => 0.5 - Math.random()) 
+  .slice(0, 4);
 
   if (!blog) {
     notFound();
@@ -67,24 +69,44 @@ export default function BlogDetailPage({ params }) {
     <div ref={containerRef} className="bg-white text-[#0B1A30] overflow-visible font-sans">
       
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 bg-[#0A162B] flex flex-col items-center justify-center text-center px-4">
-        <div className="relative z-10 max-w-4xl mx-auto fade-up">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
-            {blog.title}
-          </h1>
-          <div className="flex items-center justify-center gap-2 text-sm text-white/80 font-medium">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <ChevronRight className="w-4 h-4 text-[#56b1cf]" />
-            <Link href="/blogs" className="hover:text-white transition-colors">Our Blog</Link>
-            <ChevronRight className="w-4 h-4 text-[#56b1cf]" />
-            <span className="text-[#56b1cf] truncate max-w-[200px] sm:max-w-none">{blog.title}</span>
-          </div>
-        </div>
-      </section>
+<section className="animate-section relative overflow-hidden py-50 bg-[#0A162B]">
+  {/* Background Overlay Image */}
+  <div className="absolute inset-0 z-0">
+    <Image
+      width={1920}
+      height={1080}
+      src="/banner.webp"
+      alt="Blog Background"
+      className="w-full h-full object-cover opacity-20"
+      priority
+    />
+  </div>
+
+  <div className="px-4 md:px-12 lg:px-24 xl:px-40 relative z-10">
+    <div className="max-w-4xl">
+      {/* Breadcrumbs */}
+      <div className="fade-up flex items-center gap-2 text-sm text-white/80 font-medium tracking-wider uppercase mb-6">
+        <Link href="/" className="hover:text-white transition-colors">Home</Link>
+        <span>/</span>
+        <Link href="/blogs" className="hover:text-white transition-colors">Our Blog</Link>
+        <span>/</span>
+        <span className="text-[#56b1cf] truncate">Article</span>
+      </div>
+
+      {/* Decorative Line */}
+      <div className="fade-up w-24 h-1 bg-linear-to-r from-[#56b1cf] to-[#3a88db] rounded-full mb-6"></div>
+
+      {/* Title - Aligned Left for readability */}
+      <h1 className="fade-up text-2xl md:text-4xl lg:text-5xl font-bold leading-tight text-white tracking-tight">
+        {blog.title}
+      </h1>
+    </div>
+  </div>
+</section>
 
       {/* Main Content & Sidebar Grid */}
       <section className="px-4 md:px-12 lg:px-24 xl:px-40 py-24 bg-white">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+        <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           
           {/* Main Content Area (Left) */}
           <div className="lg:col-span-8 space-y-10 fade-up">
@@ -192,7 +214,58 @@ export default function BlogDetailPage({ params }) {
             </div>
 
             {/* Leave a Comment Form */}
-            <div className="pt-10">
+         
+          </div>
+
+          {/* Sidebar Area (Right) */}
+          <aside className="lg:sticky top-0 lg:col-span-4 space-y-10 fade-up">
+            
+       
+
+
+
+
+{/* Recent Blogs Widget */}
+<div className="">
+  <h4 className="text-xl font-bold text-[#0A162B] mb-6">Our Recent Blogs</h4>
+  <div className="space-y-6 bg-[#f4f7f967] rounded-xl p-8">
+    {randomBlogs.map((b) => (
+      <Link 
+        href={`/blogs/${b.slug}`} 
+        key={b.slug} // Using slug as a unique key
+        className="flex items-center gap-4 group"
+      >
+        <div className="relative w-20 h-20 shrink-0 rounded-lg overflow-hidden">
+          <Image 
+            src={b.image} 
+            alt={b.title} 
+            fill 
+            className="object-cover" 
+          />
+        </div>
+        <div>
+          <span className="flex items-center gap-1 text-xs text-gray-500 mb-1">
+            <Calendar className="w-3 h-3" /> {b.publishedAt}
+          </span>
+          <h5 className="text-sm font-semibold text-[#0A162B] group-hover:text-[#e96b46] transition-colors line-clamp-2">
+            {b.title}
+          </h5>
+        </div>
+      </Link>
+    ))}
+  </div>
+  
+  {/* Optional: Add a 'View All' button if the list gets too long */}
+  <div className="mt-8">
+    <Link 
+      href="/blogs" 
+      className="block text-center text-sm font-semibold text-[#e96b46] hover:underline"
+    >
+      View All Blogs →
+    </Link>
+  </div>
+</div>
+               <div className="pt-10">
               <h3 className="text-2xl font-bold text-[#0A162B] mb-6">Leave A Comment</h3>
               <form className="bg-[#f4f7f9] p-8 rounded-xl space-y-6">
                 <p className="text-gray-600 mb-4">Provide clear contact information, including phone number, email, and address.</p>
@@ -208,81 +281,29 @@ export default function BlogDetailPage({ params }) {
                 </button>
               </form>
             </div>
-          </div>
-
-          {/* Sidebar Area (Right) */}
-          <aside className="lg:col-span-4 space-y-10 fade-up">
-            
-            {/* Search Widget */}
-            <div className="bg-[#f4f7f9] rounded-xl p-8">
-              <h4 className="text-xl font-bold text-[#0A162B] mb-6">Search</h4>
-              <div className="flex">
-                <input 
-                  type="text" 
-                  placeholder="Search....." 
-                  className="w-full px-4 py-3 rounded-l-lg border-y border-l border-gray-200 focus:outline-none" 
-                />
-                <button className="bg-[#e96b46] text-white px-4 py-3 rounded-r-lg hover:bg-[#d65a36] transition">
-                  <Search className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
-
-            {/* Blog Category Widget */}
-            <div className="bg-[#f4f7f9] rounded-xl p-8">
-              <h4 className="text-xl font-bold text-[#0A162B] mb-6">Blog Category</h4>
-              <ul className="space-y-3">
-                {["Industry News", "Product Updates", "Expertise", "Maintenance", "Support Services"].map((cat, i) => (
-                  <li key={i}>
-                    <Link 
-                      href="#" 
-                      className={`flex items-center justify-between px-5 py-3 rounded-lg transition-colors ${i === 0 ? 'bg-[#e96b46] text-white' : 'bg-white text-gray-700 hover:text-[#e96b46]'}`}
-                    >
-                      <span className="font-medium">{cat}</span>
-                      <ChevronRight className={`w-4 h-4 ${i === 0 ? 'text-white' : 'text-gray-400'}`} />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Recent Blogs Widget */}
-            <div className="bg-[#f4f7f9] rounded-xl p-8">
-              <h4 className="text-xl font-bold text-[#0A162B] mb-6">Our Recent Blog</h4>
-              <div className="space-y-6">
-                {recentBlogs.map((b, i) => (
-                  <Link href={`/blogs/${b.slug}`} key={i} className="flex items-center gap-4 group">
-                    <div className="relative w-20 h-20 shrink-0 rounded-lg overflow-hidden">
-                      <Image src={b.image} alt={b.title} fill className="object-cover group-hover:scale-110 transition duration-500" />
-                    </div>
-                    <div>
-                      <span className="flex items-center gap-1 text-xs text-gray-500 mb-1">
-                        <Calendar className="w-3 h-3" /> {b.publishedAt}
-                      </span>
-                      <h5 className="text-sm font-bold text-[#0A162B] group-hover:text-[#e96b46] transition-colors line-clamp-2">
-                        {b.title}
-                      </h5>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
 
             {/* Popular Tags Widget */}
-            <div className="bg-[#f4f7f9] rounded-xl p-8">
-              <h4 className="text-xl font-bold text-[#0A162B] mb-6">Our Popular Tags</h4>
-              <div className="flex flex-wrap gap-2">
-                {["#Innovation", "#Precision", "#Technology", "#Expertise", "#Service", "#IndustryLeaders"].map((tag, i) => (
-                  <Link 
-                    href="#" 
-                    key={i} 
-                    className={`text-sm px-4 py-2 rounded-md transition-colors ${i === 1 ? 'bg-[#e96b46] text-white' : 'bg-white text-gray-600 hover:bg-gray-200'}`}
-                  >
-                    {tag}
-                  </Link>
-                ))}
-              </div>
-            </div>
+       <div className="bg-[#f4f7f9] rounded-xl p-8">
+  <h4 className="text-xl font-bold text-[#0A162B] mb-6">Explore More</h4>
+  <div className="flex flex-wrap gap-2">
+    {[
+      { name: "About Us", link: "/about" },
+      { name: "Contact", link: "/contact" },
+      { name: "Privacy Policy", link: "/privacy-policy" },
+      { name: "Satake", link: "/brands/satake" },
+      { name: "Buhler", link: "/brands/buhler" },
+      { name: "Services", link: "/services" }
+    ].map((item, i) => (
+      <Link 
+        href={item.link} 
+        key={item.name} 
+        className={`text-sm px-4 py-2 rounded-md transition-colors ${i === 0 ? 'bg-[#e96b46] text-white' : 'bg-white text-gray-600 hover:bg-gray-200'}`}
+      >
+        {item.name}
+      </Link>
+    ))}
+  </div>
+</div>
 
           </aside>
         </div>
