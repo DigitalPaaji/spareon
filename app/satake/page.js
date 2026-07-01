@@ -7,79 +7,79 @@ const ProductGrid = () => {
 const productData = {
   satake: [
     {
-      src: "/products/1.png",
+      src: "/products/satake1.webp",
       name: "SR Screw Feeder",
       models: "VTA-3, VTA-5, VTA-7 SR, VTA-9, VTA-10, VTA-12, VTA-12 SR, VTA-15 GMT, VTA-16 SR",
       desc: "Precision-engineered screw feeder designed for smooth and uniform grain feeding inside Satake Whitener machines. Manufactured from premium stainless steel for reliable performance, reduced wear, and long service life."
     },
     {
-      src: "/products/2.png",
+      src: "/products/satake2.webp",
       name: "SR Upper Cylinder",
       models: "VTA-5, VTA-7 SR, VTA-10, VTA-12 GMT, VTA-12 SR, VTA-15 GMT, VTA-16 SR",
       desc: "High-quality upper cylinder that ensures efficient grain movement and consistent whitening performance. Built with precision machining for durability and heavy-duty milling applications."
     },
     {
-      src: "/products/3.png",
+      src: "/products/satake3.webp",
       name: "SR Inner Base Ring",
       models: "VTA-3 SR, VTA-5, VTA-7 SR, VTA-10, VTA-12 GMT, VTA-12 SR, VTA-15 AB/GMT, VTA-16 SR",
       desc: "Precisely manufactured inner base ring that supports proper alignment of internal machine components, ensuring stable operation and extended equipment life."
     },
     {
-      src: "/products/4.png",
+      src: "/products/satake4.webp",
       name: "Silky Screw Roller (Milling Roll)",
       models: "KB-40, KB-60, KB-75, KB-80, KB-100, 2/4 TOKI",
       desc: "Heavy-duty stainless steel milling roll designed for smooth polishing, accurate grain processing, corrosion resistance, and long-lasting performance."
     },
     {
-      src: "/products/5.png",
+      src: "/products/satake5.webp",
       name: "Silky Front Housing",
       models: "Satake Silky Series",
       desc: "Durable front housing manufactured to protect internal machine components while ensuring smooth and reliable operation of Satake silky polishing machines."
     },
     {
-      src: "/products/6.png",
+      src: "/products/satake6.webp",
       name: "Paddy Table Knife Phase Hinges",
       models: "Satake Paddy Table",
       desc: "Precision-engineered knife phase hinges that provide accurate adjustment, stable movement, and dependable long-term performance in paddy table machines."
     },
     {
-      src: "/products/7.png",
+      src: "/products/satake7.webp",
       name: "Silky Inlet Sieve",
       models: "Satake Silky Series",
       desc: "Premium inlet sieve designed to regulate grain entry into the polishing chamber while ensuring efficient material flow and removal of unwanted particles."
     },
     {
-      src: "/products/8.png",
+      src: "/products/satake8.webp",
       name: "Whitener Star Plate",
       models: "VTA Whitener Series",
       desc: "High-precision star plate manufactured for efficient grain movement and consistent whitening performance with superior wear resistance."
     },
     {
-      src: "/products/9.png",
+      src: "/products/satake9.webp",
       name: "Silky Rings Inlet",
       models: "Satake Silky Series",
       desc: "Robust inlet ring engineered to improve grain feeding efficiency while maintaining smooth machine operation during polishing."
     },
     {
-      src: "/products/10.png",
+      src: "/products/satake10.webp",
       name: "Whitener & Silky Screens",
       models: "Silky: KB-35, KB-40/60, KB-75/80, KB-100 | Whitener: VTA-3, VTA-5, VTA-7 SR, VTA-9, VTA-10, VTA-12 GMT, VTA-12 SR, VTA-15 AB, VTA-15 GMT, VTA-16 SR, VTA-20",
       desc: "Premium-quality stainless steel screens manufactured with precision perforations for superior grain separation, polishing efficiency, and extended operational life."
     },
     {
-      src: "/products/11.png",
+      src: "/products/satake11.webp",
       name: "Silky Break Holder",
       models: "Satake Silky Series",
       desc: "Heavy-duty break holder designed to securely support polishing assemblies while reducing vibration and ensuring stable machine performance."
     },
     {
-      src: "/products/12.png",
+      src: "/products/satake1.webp",
       name: "Sizer Cylinder",
       models: "Satake Sizer Machines",
       desc: "Precision-machined sizing cylinder engineered for accurate grain grading and consistent separation with high wear resistance."
     },
     {
-      src: "/products/13.png",
+      src: "/products/satake2.webp",
       name: "Husker Retainer",
       models: "Satake Husker Series",
       desc: "Reliable retainer component designed to securely hold internal husker assemblies in place, ensuring smooth operation and improved machine durability."

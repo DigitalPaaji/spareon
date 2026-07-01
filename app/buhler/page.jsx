@@ -43,67 +43,67 @@ const productData = {
       desc: "Precision-engineered front mouth assembly designed to provide smooth grain entry into silky polishing machines while ensuring efficient processing."
     },
     {
-      src: "/products/7.png",
+      src: "/products/satake2.webp",
       name: "Whitener DRPA Mixing Tube",
       models: "DRPA Whitener Series",
       desc: "Durable mixing tube designed for uniform grain distribution inside the whitening chamber, improving milling consistency and product quality."
     },
     {
-      src: "/products/8.png",
+      src: "/products/satake3.webp",
       name: "Base Star Hub Cylinder & Screen Frame",
       models: "Bühler Whitener Series",
       desc: "Complete hub cylinder and screen frame assembly providing structural stability, secure screen mounting, and efficient milling performance."
     },
     {
-      src: "/products/9.png",
+      src: "/products/satake1.webp",
       name: "Silky DRPA/DRPN Milling Roll (Screw Feeder)",
       models: "DRPA, DRPN",
       desc: "Heavy-duty stainless steel milling roll and screw feeder designed for smooth grain feeding, precise polishing, corrosion resistance, and long operational life."
     },
     {
-      src: "/products/10.png",
+      src: "/products/satake10.webp",
       name: "Whitener BSPB Screw Feeder",
       models: "BSPB Whitener",
       desc: "High-precision screw feeder manufactured for uniform grain feeding, reliable machine performance, and consistent rice whitening results."
     },
     {
-      src: "/products/11.png",
+      src: "/products/satake11.webp",
       name: "Whitener BSPB Base Chute",
       models: "BSPB Whitener",
       desc: "Robust base chute designed for smooth grain discharge and uninterrupted material flow during continuous milling operations."
     },
     {
-      src: "/products/12.png",
+      src: "/products/satake13.webp",
       name: "Whitener & Silky Screens",
       models: "Silky: DRPA, DRPN, DRPG | Whitener: BSPB, DRWA",
       desc: "Premium stainless steel screens manufactured with precision perforations for efficient grain separation, polishing, and extended service life."
     },
     {
-      src: "/products/13.png",
+      src: "/products/satake3.webp",
       name: "Whitener BSPB/DRWA Vertical Break",
       models: "BSPB, DRWA",
       desc: "Heavy-duty vertical break component designed to ensure smooth material flow and enhance milling efficiency inside Bühler whitener machines."
     },
     {
-      src: "/products/14.png",
+      src: "/products/satake6.webp",
       name: "Whitener Sieve Frame",
       models: "BSPB Whitener",
       desc: "Precision-machined sieve frame engineered to securely hold screens in place while maintaining accurate alignment and consistent milling performance."
     },
     {
-      src: "/products/15.png",
+      src: "/products/satake7.webp",
       name: "Husker Retainer",
       models: "DRHE",
       desc: "Durable retainer component designed to securely position internal husker assemblies for stable machine operation and reduced maintenance."
     },
     {
-      src: "/products/16.png",
+      src: "/products/satake9.webp",
       name: "Husker Chute",
       models: "DRHE",
       desc: "Heavy-duty discharge chute designed to provide smooth grain flow through Bühler husker machines while minimizing grain loss."
     },
     {
-      src: "/products/17.png",
+      src: "/products/satake8.webp",
       name: "Whitener Bearing Bush",
       models: "BSPB Whitener",
       desc: "High-precision bearing bush manufactured to reduce friction, support rotating shafts, and deliver long-lasting, reliable performance in Bühler whitening machines."

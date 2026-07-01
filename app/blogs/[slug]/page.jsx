@@ -28,6 +28,8 @@ import { BsTwitter } from "react-icons/bs";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function BlogDetailPage({ params }) {
+  const [loading, setLoading] = React.useState(false);
+const [success, setSuccess] = React.useState(false);
   const containerRef = useRef(null);
   
   // Unwrap params using React.use() for Next.js 15 compatibility in Client Components
@@ -43,6 +45,50 @@ export default function BlogDetailPage({ params }) {
   if (!blog) {
     notFound();
   }
+
+
+const handleCommentSubmit = async (e) => {
+  e.preventDefault();
+
+  setLoading(true);
+  setSuccess(false);
+
+  const form = e.currentTarget;
+
+  const data = {
+    FormType: "Blog Comment Enquiry",
+    FirstName: form.firstName.value,
+    LastName: form.lastName.value,
+    Email: form.email.value,
+    Phone: form.phone.value,
+    Message: form.message.value,
+  };
+
+  try {
+    const res = await fetch("/api/contact-popup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await res.json();
+
+    if (!res.ok || !result.success) {
+      throw new Error(result.message || "Email failed");
+    }
+
+    setSuccess(true);
+    form.reset();
+  } catch (err) {
+    console.error("Blog form error:", err);
+    alert("Something went wrong.");
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   useGSAP(
     () => {
@@ -213,7 +259,7 @@ export default function BlogDetailPage({ params }) {
               </div>
             </div>
 
-            {/* Leave a Comment Form */}
+           
          
           </div>
 
@@ -267,19 +313,69 @@ export default function BlogDetailPage({ params }) {
 </div>
                <div className="pt-10">
               <h3 className="text-2xl font-bold text-[#0A162B] mb-6">Leave A Comment</h3>
-              <form className="bg-[#f4f7f9] p-8 rounded-xl space-y-6">
-                <p className="text-gray-600 mb-4">Provide clear contact information, including phone number, email, and address.</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <input type="text" placeholder="First Name" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-[#056483]" />
-                  <input type="text" placeholder="Last Name" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-[#056483]" />
-                  <input type="email" placeholder="Email" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-[#056483]" />
-                  <input type="tel" placeholder="Phone" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-[#056483]" />
-                </div>
-                <textarea placeholder="Write your message here..." rows="4" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-[#056483]"></textarea>
-                <button type="button" className="bg-[#e96b46] hover:bg-[#d65a36] text-white px-8 py-3 rounded-lg font-medium transition-colors">
-                  Post Comment
-                </button>
-              </form>
+           <form
+  onSubmit={handleCommentSubmit}
+  className="bg-[#f4f7f9] p-8 rounded-xl space-y-6"
+>
+  <p className="text-gray-600 mb-4">
+    Fill in your details and we'll get back to you shortly.
+  </p>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <input
+      name="firstName"
+      required
+      type="text"
+      placeholder="First Name"
+      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-[#056483]"
+    />
+
+    <input
+      name="lastName"
+      type="text"
+      placeholder="Last Name"
+      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-[#056483]"
+    />
+
+    <input
+      name="email"
+      required
+      type="email"
+      placeholder="Email"
+      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-[#056483]"
+    />
+
+    <input
+      name="phone"
+      required
+      type="tel"
+      placeholder="Phone"
+      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-[#056483]"
+    />
+  </div>
+
+  <textarea
+    name="message"
+    required
+    rows="4"
+    placeholder="Write your message here..."
+    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-[#056483]"
+  />
+
+  {success && (
+    <div className="rounded-lg bg-green-50 border border-green-200 p-3 text-green-700 text-sm">
+      Thank you! Your enquiry has been sent successfully.
+    </div>
+  )}
+
+  <button
+    type="submit"
+    disabled={loading}
+    className="bg-[#e96b46] hover:bg-[#d65a36] disabled:opacity-60 text-white px-8 py-3 rounded-lg font-medium transition-colors"
+  >
+    {loading ? "Sending..." : "Send Enquiry"}
+  </button>
+</form>
             </div>
 
             {/* Popular Tags Widget */}
@@ -292,7 +388,6 @@ export default function BlogDetailPage({ params }) {
       { name: "Privacy Policy", link: "/privacy-policy" },
       { name: "Satake", link: "/brands/satake" },
       { name: "Buhler", link: "/brands/buhler" },
-      { name: "Services", link: "/services" }
     ].map((item, i) => (
       <Link 
         href={item.link} 

@@ -104,12 +104,12 @@ useGSAP(() => {
         <article className="flex flex-col h-full border border-gray-100 shadow-[0_4px_15px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(5,100,131,0.08)] transition-all duration-500 overflow-hidden bg-white">
           
           {/* Image Container */}
-          <div className="relative h-60 w-full overflow-hidden">
+          <div className="relative h-full w-full overflow-hidden">
             <Image
               src={post.image}
               alt={post.title}
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-500"
+              width={800} height={333}
+              className="w-full h-auto object-cover"
             />
             <div className="absolute top-5 left-5 bg-white/90 backdrop-blur-sm text-[#056483] text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-sm shadow-sm">
               {post.category}
@@ -117,7 +117,7 @@ useGSAP(() => {
           </div>
 
           {/* Content Container */}
-          <div className="p-7 flex flex-col flex-grow">
+          <div className="p-7 flex flex-col grow">
             <div className="flex flex-wrap items-center gap-3 text-[10px] text-gray-500 mb-4 font-medium uppercase tracking-wider">
               <div className="flex items-center gap-1">
                 <Calendar className="w-3 h-3 text-[#056483]" />

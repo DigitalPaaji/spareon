@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
 
@@ -9,7 +10,7 @@ const ProductType = () => {
       subtitle: "Rice Milling & Processing Parts",
       image:
         "https://japaneseknifecompany.com/wp-content/uploads/2025/04/satake-logo.webp",
-      href: "#satake",
+      href: "/satake",
       product:"cat1.webp"
     },
     {
@@ -17,7 +18,7 @@ const ProductType = () => {
       name: "BÜHLER",
       subtitle: "Milling & Sorting Machine Parts",
       image: "https://upload.wikimedia.org/wikipedia/commons/9/91/Buhler_logo_RGB.png",
-      href: "#buhler",
+      href: "/buhler",
       product:"cat2.webp" 
 },
   ];
@@ -45,7 +46,7 @@ const ProductType = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-14">
   {brands.map((brand) => (
-    <a
+    <Link
       key={brand.id}
       href={brand.href}
       className=""
@@ -61,7 +62,7 @@ const ProductType = () => {
 
 
     
-    </a>
+    </Link>
   ))}
 </div>
       </div>

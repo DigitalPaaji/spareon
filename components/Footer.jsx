@@ -14,17 +14,17 @@ const Footer = () => {
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
-    { name: "Products", href: "/products" },
     { name: "Blogs", href: "/blogs" },
     { name: "Contact", href: "/contact" },
+
   ];
 
   const productLinks = [
-    { name: "Satake Spare Parts", href: "/products/satake" },
-    { name: "Bühler Spare Parts", href: "/products/buhler" },
-    { name: "Whitener Parts", href: "/products/whitener-parts" },
-    { name: "Silky Polisher Parts", href: "/products/silky-parts" },
-    { name: "Husker Spare Parts", href: "/products/husker-parts" },
+    { name: "Satake Spare Parts", href: "/satake" },
+    { name: "Bühler Spare Parts", href: "/buhler" },
+    // { name: "Whitener Parts", href: "/products/whitener-parts" },
+    // { name: "Silky Polisher Parts", href: "/products/silky-parts" },
+    // { name: "Husker Spare Parts", href: "/products/husker-parts" },
   ];
 
   const socialLinks = [
@@ -117,12 +117,12 @@ const Footer = () => {
             <ul className="mt-6 space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-slate-400 transition-colors duration-300 hover:text-cyan-300"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -135,14 +135,14 @@ const Footer = () => {
             <ul className="mt-6 space-y-3">
               {productLinks.map((link) => (
                 <li key={link.name}>
-                  <a
+                  <Link
                     href={link.href}
                     className="group inline-flex items-center gap-2 text-sm text-slate-400 transition-colors duration-300 hover:text-cyan-300"
                   >
                     <span className="h-1 w-1 rounded-full bg-cyan-400/70 transition-transform duration-300 group-hover:scale-150" />
 
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -185,19 +185,14 @@ const Footer = () => {
           </p>
 
           <div className="flex items-center gap-5 text-xs text-slate-500">
-            <a
+            <Link
               href="/privacy-policy"
               className="transition-colors hover:text-cyan-300"
             >
               Privacy Policy
-            </a>
+            </Link>
 
-            <a
-              href="/terms"
-              className="transition-colors hover:text-cyan-300"
-            >
-              Terms
-            </a>
+
           </div>
         </div>
       </div>
@@ -238,9 +233,9 @@ const ContactItem = ({ icon: Icon, label, value, href }) => {
 
   if (href) {
     return (
-      <a href={href} className="group flex items-start gap-3">
+      <Link href={href} className="group flex items-start gap-3">
         {content}
-      </a>
+      </Link>
     );
   }
 

@@ -129,7 +129,7 @@ const HeroSlider = () => {
 
 <div className="w-fit gsap-text">
   <Link
-    href="#contact"
+    href="/satake"
     className="group relative flex items-center gap-4 overflow-hidden rounded-r-full  bg-gradient-to-r from-[#056483] to-[#063B73]  pl-6 pr-1.5 py-1.5 text-sm font-bold text-white shadow-[0_10px_25px_rgba(16,123,235,0.3)] transition-all duration-300 hover:shadow-[0_15px_30px_rgba(16,123,235,0.45)]"
   >
     {/* Hover Sweep Effect (Adjusted to a slightly darker blue to show up against the solid base) */}
