@@ -321,7 +321,7 @@ const handleCommentSubmit = async (e) => {
     Fill in your details and we'll get back to you shortly.
   </p>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div className="grid grid-cols-2 gap-6">
     <input
       name="firstName"
       required
@@ -336,7 +336,7 @@ const handleCommentSubmit = async (e) => {
       placeholder="Last Name"
       className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-[#056483]"
     />
-
+</div>
     <input
       name="email"
       required
@@ -352,7 +352,7 @@ const handleCommentSubmit = async (e) => {
       placeholder="Phone"
       className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-[#056483]"
     />
-  </div>
+  
 
   <textarea
     name="message"
