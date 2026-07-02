@@ -158,12 +158,12 @@ const handleCommentSubmit = async (e) => {
           <div className="lg:col-span-8 space-y-10 fade-up">
             
             {/* Primary Article Image */}
-            <div className="relative w-full h-[350px] md:h-[500px] overflow-hidden rounded-xl shadow-sm">
+            <div className="relative w-full h-auto overflow-hidden rounded-xl shadow-sm">
               <Image
                 src={blog.image}
                 alt={blog.title}
-                fill
-                className="object-cover"
+                width={800} height={800}
+                className="w-full h-auto object-cover"
                 priority
               />
             </div>

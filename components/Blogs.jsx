@@ -16,26 +16,33 @@ const BlogSection = () => {
   const headingRef = useRef(null);
   const cardRefs = useRef([]);
 
-  // Filter, limit to 4, and map the JSON data
-  const blogs = (blogData?.blogs || [])
-    .filter((blog) => blog.isPublished)
-    .slice(0, 4)
-    .map((blog, index) => ({
-      id: blog.id,
-      title: blog.title,
-      description: blog.excerpt,
-      // Alternating images as requested
-      image: index % 2 === 0 ? "/blog1.webp" : "/blog2.webp",
-      category: blog.category,
-      date: new Date(blog.publishedAt).toLocaleDateString("en-GB", {
-        day: "2-digit",
-        month: "short",
-        year: "numeric",
-      }),
-      href: `/blogs/${blog.slug}`, // Links to the inner page
-      theme: index === 0 ? "light" : "dark",
-    }));
+const shuffleArray = (array) => {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+};
 
+const blogs = shuffleArray(
+  (blogData?.blogs || []).filter((blog) => blog.isPublished)
+)
+  .slice(0, 4)
+  .map((blog, index) => ({
+    id: blog.id,
+    title: blog.title,
+    description: blog.excerpt,
+    image: blog.image,
+    category: blog.category,
+    date: new Date(blog.publishedAt).toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    }),
+    href: `/blogs/${blog.slug}`,
+    theme: index === 0 ? "light" : "dark",
+  }));
   useGSAP(
     () => {
       const cards = cardRefs.current.filter(Boolean);
