@@ -187,7 +187,7 @@ const Header = () => {
         {/* Desktop CTA */}
         <div className="hidden xl:block">
           <Link
-            href="#contact"
+            href="/contact"
             className="group relative border-2 border-[#0a7599] flex items-center gap-3 overflow-hidden rounded-full p-bg px-6 py-2 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(6,56,74,0.22)] transition-all duration-300 hover:shadow-[0_18px_35px_rgba(6,56,74,0.3)]"
           >
             <span className="absolute inset-0 translate-x-[-105%] bg-linear-to-r from-[#0a7599] to-[#056483] transition-transform duration-500 group-hover:translate-x-0" />
