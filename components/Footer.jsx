@@ -163,8 +163,8 @@ const Footer = () => {
               <ContactItem
                 icon={FaPhone}
                 label="Phone"
-                value="+91 99961-00671"
-                href="tel:+919996100671"
+                value="+91 74160-00071"
+                href="tel:+917416000071"
               />
 
               <ContactItem

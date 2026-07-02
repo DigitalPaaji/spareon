@@ -28,7 +28,7 @@ export default function FloatingButtons() {
     <div className="fixed bottom-5 right-5 z-999 flex flex-col gap-3">
       {/* WhatsApp */}
       <a
-        href="https://wa.me/919459101919?text=Hi%20Spareon%20India,%20I%20need%20information%20about%20your%20rice%20mill%20spare%20parts."
+        href="https://wa.me/917416000071?text=Hi%20Spareon%20India,%20I%20need%20information%20about%20your%20rice%20mill%20spare%20parts."
         target="_blank"
         rel="noopener noreferrer"
         className="group flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl"
