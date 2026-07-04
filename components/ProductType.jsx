@@ -8,18 +8,15 @@ const ProductType = () => {
       id: 1,
       name: "SATAKE",
       subtitle: "Rice Milling & Processing Parts",
-      image:
-        "https://japaneseknifecompany.com/wp-content/uploads/2025/04/satake-logo.webp",
-      href: "/satake",
-      product:"cat1.webp"
+  href: "/satake",
+      product:"satake.webp"
     },
     {
       id: 2,
       name: "BÜHLER",
       subtitle: "Milling & Sorting Machine Parts",
-      image: "https://upload.wikimedia.org/wikipedia/commons/9/91/Buhler_logo_RGB.png",
-      href: "/buhler",
-      product:"cat2.webp" 
+  href: "/buhler",
+      product:"buhler.webp" 
 },
   ];
 

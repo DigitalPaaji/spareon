@@ -4,112 +4,160 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const BuhlerProductGrid = () => {
+
 const productData = {
   buhler: [
-    {
-      src: "/products/1.png",
-      name: "Silky DRPA Bush",
-      models: "DRPA Silky Series",
-      desc: "Precision-engineered bush manufactured from premium-grade material to ensure smooth shaft rotation, reduced friction, and long-lasting performance in Bühler silky machines."
-    },
-    {
-      src: "/products/2.png",
-      name: "Whitener BSPB Upper Ring Pipe",
-      models: "BSPB Whitener Series",
-      desc: "High-quality upper ring pipe designed for efficient grain flow and consistent whitening performance while providing excellent wear resistance and durability."
-    },
-    {
-      src: "/products/3.png",
-      name: "Silky Spare Parts",
-      models: "Bühler Silky Series",
-      desc: "Complete range of precision-manufactured spare parts for Bühler silky machines, ensuring reliable operation, easy installation, and extended machine life."
-    },
-    {
-      src: "/products/4.png",
-      name: "Sizer Spare Parts",
-      models: "Bühler Sizer Machines",
-      desc: "Premium-quality sizing machine components engineered for accurate grain grading, smooth operation, and consistent milling performance."
-    },
-    {
-      src: "/products/5.png",
-      name: "Paddy Table Knife Phase Hinges",
-      models: "Bühler Paddy Table",
-      desc: "Heavy-duty knife phase hinges manufactured for precise adjustment, stable movement, and long service life in Bühler paddy table machines."
-    },
-    {
-      src: "/products/6.png",
-      name: "DRPA Front Mouth",
-      models: "DRPA Silky Series",
-      desc: "Precision-engineered front mouth assembly designed to provide smooth grain entry into silky polishing machines while ensuring efficient processing."
-    },
-    {
-      src: "/products/satake2.webp",
-      name: "Whitener DRPA Mixing Tube",
-      models: "DRPA Whitener Series",
-      desc: "Durable mixing tube designed for uniform grain distribution inside the whitening chamber, improving milling consistency and product quality."
-    },
-    {
-      src: "/products/satake3.webp",
-      name: "Base Star Hub Cylinder & Screen Frame",
-      models: "Bühler Whitener Series",
-      desc: "Complete hub cylinder and screen frame assembly providing structural stability, secure screen mounting, and efficient milling performance."
-    },
-    {
-      src: "/products/satake1.webp",
-      name: "Silky DRPA/DRPN Milling Roll (Screw Feeder)",
-      models: "DRPA, DRPN",
-      desc: "Heavy-duty stainless steel milling roll and screw feeder designed for smooth grain feeding, precise polishing, corrosion resistance, and long operational life."
-    },
-    {
-      src: "/products/satake10.webp",
-      name: "Whitener BSPB Screw Feeder",
-      models: "BSPB Whitener",
-      desc: "High-precision screw feeder manufactured for uniform grain feeding, reliable machine performance, and consistent rice whitening results."
-    },
-    {
-      src: "/products/satake11.webp",
-      name: "Whitener BSPB Base Chute",
-      models: "BSPB Whitener",
-      desc: "Robust base chute designed for smooth grain discharge and uninterrupted material flow during continuous milling operations."
-    },
-    {
-      src: "/products/satake13.webp",
-      name: "Whitener & Silky Screens",
-      models: "Silky: DRPA, DRPN, DRPG | Whitener: BSPB, DRWA",
-      desc: "Premium stainless steel screens manufactured with precision perforations for efficient grain separation, polishing, and extended service life."
-    },
-    {
-      src: "/products/satake3.webp",
-      name: "Whitener BSPB/DRWA Vertical Break",
-      models: "BSPB, DRWA",
-      desc: "Heavy-duty vertical break component designed to ensure smooth material flow and enhance milling efficiency inside Bühler whitener machines."
-    },
-    {
-      src: "/products/satake6.webp",
-      name: "Whitener Sieve Frame",
-      models: "BSPB Whitener",
-      desc: "Precision-machined sieve frame engineered to securely hold screens in place while maintaining accurate alignment and consistent milling performance."
-    },
-    {
-      src: "/products/satake7.webp",
-      name: "Husker Retainer",
-      models: "DRHE",
-      desc: "Durable retainer component designed to securely position internal husker assemblies for stable machine operation and reduced maintenance."
-    },
-    {
-      src: "/products/satake9.webp",
-      name: "Husker Chute",
-      models: "DRHE",
-      desc: "Heavy-duty discharge chute designed to provide smooth grain flow through Bühler husker machines while minimizing grain loss."
-    },
-    {
-      src: "/products/satake8.webp",
-      name: "Whitener Bearing Bush",
-      models: "BSPB Whitener",
-      desc: "High-precision bearing bush manufactured to reduce friction, support rotating shafts, and deliver long-lasting, reliable performance in Bühler whitening machines."
-    },
+    { src: "/Images/Spareon/Buhler/1.png", name: "Buhler Front Mouth Model - DRPA 01" },
+    { src: "/Images/Spareon/Buhler/2.png", name: "Buhler Front Mouth Model - DRPA 02" },
+    { src: "/Images/Spareon/Buhler/3.png", name: "Buhler Front Mouth Model - DRPA 03" },
+    { src: "/Images/Spareon/Buhler/4.png", name: "Buhler Husker Chute Model - DRHE 01" },
+    { src: "/Images/Spareon/Buhler/5.png", name: "Buhler Husker Chute Model - DRHE 02" },
+    { src: "/Images/Spareon/Buhler/6.png", name: "Buhler Husker Chute Model - DRHE 03" },
+    { src: "/Images/Spareon/Buhler/7.png", name: "Buhler Husker Retainer Model - DRHE 01" },
+    { src: "/Images/Spareon/Buhler/8.png", name: "Buhler Husker Retainer Model - DRHE 02" },
+    { src: "/Images/Spareon/Buhler/9.png", name: "Buhler Husker Retainer Model - DRHE 03" },
+    { src: "/Images/Spareon/Buhler/10.png", name: "Buhler Paddy Table Knife Phase Hinges 01" },
+    { src: "/Images/Spareon/Buhler/11.png", name: "Buhler Paddy Table Knife Phase Hinges 02" },
+    { src: "/Images/Spareon/Buhler/12.png", name: "Buhler Silky DRPA Bush" },
+    { src: "/Images/Spareon/Buhler/13.png", name: "Buhler Silky DRPA Front Mouth" },
+    { src: "/Images/Spareon/Buhler/14.png", name: "Buhler Silky DRPA Mixing Tube 01" },
+    { src: "/Images/Spareon/Buhler/15.png", name: "Buhler Silky DRPA Mixing Tube" },
+    { src: "/Images/Spareon/Buhler/16.png", name: "Buhler Silky DRPA, DRPN Milling Roll Screw Feeder 01" },
+    { src: "/Images/Spareon/Buhler/17.png", name: "Buhler Silky DRPA, DRPN Milling Roll Screw Feeder 02" },
+    { src: "/Images/Spareon/Buhler/18.png", name: "Buhler Silky DRPA, DRPN Milling Roll Screw Feeder 03" },
+    { src: "/Images/Spareon/Buhler/19.png", name: "Buhler Sizer Cylinder & Screen Frame 01" },
+    { src: "/Images/Spareon/Buhler/20.png", name: "Buhler Sizer Cylinder & Screen Frame" },
+    { src: "/Images/Spareon/Buhler/21.png", name: "Buhler Whitener Base Star Hub" },
+    { src: "/Images/Spareon/Buhler/22.png", name: "Buhler Whitener Bearing Bush Model BSPB 01" },
+    { src: "/Images/Spareon/Buhler/23.png", name: "Buhler Whitener Bearing Bush Model BSPB 02" },
+    { src: "/Images/Spareon/Buhler/24.png", name: "Buhler Whitener Bearing Bush Model BSPB 03" },
+    { src: "/Images/Spareon/Buhler/25.png", name: "Buhler Whitener BSPB - DRWA Vertical Break 01" },
+    { src: "/Images/Spareon/Buhler/26.png", name: "Buhler Whitener BSPB - DRWA Vertical Break 02" },
+    { src: "/Images/Spareon/Buhler/27.png", name: "Buhler Whitener BSPB Base Shout 01" },
+    { src: "/Images/Spareon/Buhler/28.png", name: "Buhler Whitener BSPB Base Shout 02" },
+    { src: "/Images/Spareon/Buhler/29.png", name: "Buhler Whitener BSPB Screw Feeder 01" },
+    { src: "/Images/Spareon/Buhler/30.png", name: "Buhler Whitener BSPB Screw Feeder 02" },
+    { src: "/Images/Spareon/Buhler/31.png", name: "Buhler Whitener Sieve Frame Model - BSPB 01" },
+    { src: "/Images/Spareon/Buhler/32.png", name: "Buhler Whitener Sieve Frame Model - BSPB 02" },
+    { src: "/Images/Spareon/Buhler/33.png", name: "Buhler Whitener Sieve Frame Model - BSPB 03" },
+    { src: "/Images/Spareon/Buhler/34.png", name: "Buhler Whitener Silky Screens (Silky-DRPA, DRPN, DRPG)" },
+    { src: "/Images/Spareon/Buhler/35.png", name: "Buhler Whitener Silky Screens (Silky-DRPA, DRPN, DRPG)" },
+    { src: "/Images/Spareon/Buhler/36.png", name: "Buhler Whitener Silky Screens (Silky-DRPA, DRPN, DRPG)" },
+    { src: "/Images/Spareon/Buhler/37.png", name: "Buhler Whitener Silky Screens (Silky-DRPA, DRPN, DRPG)" },
+    { src: "/Images/Spareon/Buhler/38.png", name: "Buhler Whitener Silky Screens SPPB Upper 01" },
+    { src: "/Images/Spareon/Buhler/39.png", name: "Buhler Whitener SPPB Upper 01" },
+    { src: "/Images/Spareon/Buhler/40.png", name: "Buhler Whitener SPPB Upper" },
   ],
 };
+
+
+
+  // const productData = {
+//   buhler: [
+//     {
+//       src: "/Images/Spareon/Buhler/1.png",
+//       name: "Silky DRPA Bush",
+//       models: "DRPA Silky Series",
+//       desc: "Precision-engineered bush manufactured from premium-grade material to ensure smooth shaft rotation, reduced friction, and long-lasting performance in Bühler silky machines."
+//     },
+//     {
+//       src: "/Images/Spareon/Buhler/2.png",
+//       name: "Whitener BSPB Upper Ring Pipe",
+//       models: "BSPB Whitener Series",
+//       desc: "High-quality upper ring pipe designed for efficient grain flow and consistent whitening performance while providing excellent wear resistance and durability."
+//     },
+//     {
+//       src: "/Images/Spareon/Buhler/3.png",
+//       name: "Silky Spare Parts",
+//       models: "Bühler Silky Series",
+//       desc: "Complete range of precision-manufactured spare parts for Bühler silky machines, ensuring reliable operation, easy installation, and extended machine life."
+//     },
+//     {
+//       src: "/Images/Spareon/Buhler/4.png",
+//       name: "Sizer Spare Parts",
+//       models: "Bühler Sizer Machines",
+//       desc: "Premium-quality sizing machine components engineered for accurate grain grading, smooth operation, and consistent milling performance."
+//     },
+//     {
+//       src: "/Images/Spareon/Buhler/5.png",
+//       name: "Paddy Table Knife Phase Hinges",
+//       models: "Bühler Paddy Table",
+//       desc: "Heavy-duty knife phase hinges manufactured for precise adjustment, stable movement, and long service life in Bühler paddy table machines."
+//     },
+//     {
+//       src: "/Images/Spareon/Buhler/6.png",
+//       name: "DRPA Front Mouth",
+//       models: "DRPA Silky Series",
+//       desc: "Precision-engineered front mouth assembly designed to provide smooth grain entry into silky polishing machines while ensuring efficient processing."
+//     },
+//     {
+//       src: "/Images/Spareon/Buhler/satake2.webp",
+//       name: "Whitener DRPA Mixing Tube",
+//       models: "DRPA Whitener Series",
+//       desc: "Durable mixing tube designed for uniform grain distribution inside the whitening chamber, improving milling consistency and product quality."
+//     },
+//     {
+//       src: "/Images/Spareon/Buhler/satake3.webp",
+//       name: "Base Star Hub Cylinder & Screen Frame",
+//       models: "Bühler Whitener Series",
+//       desc: "Complete hub cylinder and screen frame assembly providing structural stability, secure screen mounting, and efficient milling performance."
+//     },
+//     {
+//       src: "/Images/Spareon/Buhler/satake1.webp",
+//       name: "Silky DRPA/DRPN Milling Roll (Screw Feeder)",
+//       models: "DRPA, DRPN",
+//       desc: "Heavy-duty stainless steel milling roll and screw feeder designed for smooth grain feeding, precise polishing, corrosion resistance, and long operational life."
+//     },
+//     {
+//       src: "/Images/Spareon/Buhler/satake10.webp",
+//       name: "Whitener BSPB Screw Feeder",
+//       models: "BSPB Whitener",
+//       desc: "High-precision screw feeder manufactured for uniform grain feeding, reliable machine performance, and consistent rice whitening results."
+//     },
+//     {
+//       src: "/Images/Spareon/Buhler/satake11.webp",
+//       name: "Whitener BSPB Base Chute",
+//       models: "BSPB Whitener",
+//       desc: "Robust base chute designed for smooth grain discharge and uninterrupted material flow during continuous milling operations."
+//     },
+//     {
+//       src: "/Images/Spareon/Buhler/satake13.webp",
+//       name: "Whitener & Silky Screens",
+//       models: "Silky: DRPA, DRPN, DRPG | Whitener: BSPB, DRWA",
+//       desc: "Premium stainless steel screens manufactured with precision perforations for efficient grain separation, polishing, and extended service life."
+//     },
+//     {
+//       src: "/Images/Spareon/Buhler/satake3.webp",
+//       name: "Whitener BSPB/DRWA Vertical Break",
+//       models: "BSPB, DRWA",
+//       desc: "Heavy-duty vertical break component designed to ensure smooth material flow and enhance milling efficiency inside Bühler whitener machines."
+//     },
+//     {
+//       src: "/Images/Spareon/Buhler/satake6.webp",
+//       name: "Whitener Sieve Frame",
+//       models: "BSPB Whitener",
+//       desc: "Precision-machined sieve frame engineered to securely hold screens in place while maintaining accurate alignment and consistent milling performance."
+//     },
+//     {
+//       src: "/Images/Spareon/Buhler/satake7.webp",
+//       name: "Husker Retainer",
+//       models: "DRHE",
+//       desc: "Durable retainer component designed to securely position internal husker assemblies for stable machine operation and reduced maintenance."
+//     },
+//     {
+//       src: "/Images/Spareon/Buhler/satake9.webp",
+//       name: "Husker Chute",
+//       models: "DRHE",
+//       desc: "Heavy-duty discharge chute designed to provide smooth grain flow through Bühler husker machines while minimizing grain loss."
+//     },
+//     {
+//       src: "/Images/Spareon/Buhler/satake8.webp",
+//       name: "Whitener Bearing Bush",
+//       models: "BSPB Whitener",
+//       desc: "High-precision bearing bush manufactured to reduce friction, support rotating shafts, and deliver long-lasting, reliable performance in Bühler whitening machines."
+//     },
+//   ],
+// };
 
   const cardThemes = [
     "from-blue-50 to-white border-blue-100",
@@ -156,7 +204,7 @@ const productData = {
       </section>
 
       <div className="px-4 md:px-12 lg:px-24 xl:px-40 py-24 bg-gray-50">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {productData.buhler.map((product, index) => (
             <div 
               key={index} 

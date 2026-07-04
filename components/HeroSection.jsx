@@ -18,7 +18,7 @@ const slideData = [
     line2: "STRONGER MACHINERY.",
     line2Color: "text-white",     // White
     description: "Premium Spare Parts for Satake Buhler Rice Polishers",
-    image: "/2.webp",
+    image: "/3.webp",
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const slideData = [
     line2: "SPAREON INDIA",
     line2Color: "text-[#25B8D9]", // Cyan
     description: "Deep-drawing precision spare parts suppliers. Maintain peak conditions to save money. Hard-wearing stainless steel.",
-    image: "/png1.webp",
+    image: "/4.png",
   },
 ];
 
