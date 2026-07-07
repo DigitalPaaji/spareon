@@ -53,29 +53,37 @@ const handleCommentSubmit = async (e) => {
   setSuccess(false);
 
   const form = e.currentTarget;
+  const submitData = new FormData();
 
-  const data = {
-    FormType: "Blog Comment Enquiry",
-    FirstName: form.firstName.value,
-    LastName: form.lastName.value,
+  const commentFormData = {
+    Name: `${form.firstName.value} ${form.lastName.value}`.trim(),
     Email: form.email.value,
     Phone: form.phone.value,
+    Subject: "Blog Comment Enquiry",
+    BlogTitle: blog.title,
+    BlogSlug: blog.slug,
     Message: form.message.value,
   };
 
+  submitData.append("formdata", JSON.stringify(commentFormData));
+
+  submitData.append(
+    "subject",
+    `Spareon Website Query - ${commentFormData.Subject}`
+  );
+
+  submitData.append("sendto", "yeeson.precision@gmail.com");
+
   try {
-    const res = await fetch("/api/contact-popup", {
+    const res = await fetch("https://sendmail.digitalpaaji.com/sendmail", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
+      body: submitData,
     });
 
     const result = await res.json();
 
     if (!res.ok || !result.success) {
-      throw new Error(result.message || "Email failed");
+      throw new Error("Email failed");
     }
 
     setSuccess(true);

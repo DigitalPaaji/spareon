@@ -1,0 +1,23 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Force non-www
+RewriteCond %{HTTP_HOST} ^www\.spareonindia\.com [NC]
+RewriteRule ^ https://spareonindia.com%{REQUEST_URI} [L,R=301]
+
+# Serve .html if exists
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_URI}.html [L]
+
+# Otherwise fallback to index.html (SPA behavior)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]
+
+# Disable directory listing
+Options -Indexes

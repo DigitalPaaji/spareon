@@ -55,28 +55,49 @@ const toggleProduct = (product) => {
     const submitData = new FormData();
 
    // In handleSubmit
-submitData.append(
-  "fields",
-  JSON.stringify({
-    FormType: "Popup Enquiry",
-    FirstName: form.firstName.value,
-    LastName: form.lastName.value,
+// submitData.append(
+//   "fields",
+//   JSON.stringify({
+//     FormType: "Popup Enquiry",
+//     FirstName: form.firstName.value,
+//     LastName: form.lastName.value,
+//     FirmName: form.firmName.value,
+//     Email: form.email.value,
+//     Phone: form.phone.value,
+//     Message: form.message.value,
+//     Product: formData.Product.join(", "), // Add this
+//     GSTCertificate: gstCertificate ? gstCertificate.name : "No GST certificate uploaded",
+//   })
+// );
+
+
+  const popupFormData = {
+    Name: `${form.firstName.value} ${form.lastName.value}`.trim(),
     FirmName: form.firmName.value,
     Email: form.email.value,
     Phone: form.phone.value,
+    Subject: "Popup Enquiry",
+    Product: formData.Product,
     Message: form.message.value,
-    Product: formData.Product.join(", "), // Add this
-    GSTCertificate: gstCertificate ? gstCertificate.name : "No GST certificate uploaded",
-  })
-);
+    GSTCertificate: gstCertificate
+      ? gstCertificate.name
+      : "No GST certificate uploaded",
+  };
+  submitData.append("formdata", JSON.stringify(popupFormData));
 
+  submitData.append(
+    "subject",
+    `Spareon Website Query - ${popupFormData.Subject}`
+  );
+
+  submitData.append("sendto", "yeeson.precision@gmail.com");
 
     if (gstCertificate) {
       submitData.append("attachments", gstCertificate);
     }
 
     try {
-      const res = await fetch("/api/contact-popup", {
+      const res = await fetch("https://sendmail.digitalpaaji.com/sendmail", {
         method: "POST",
         body: submitData,
       });
@@ -92,7 +113,7 @@ submitData.append(
       setTimeout(() => {
         setOpen(false);
         setSent(false);
-      }, 1800);
+      }, 5000);
     } catch (error) {
       alert("Something went wrong. Please try again.");
     } finally {
