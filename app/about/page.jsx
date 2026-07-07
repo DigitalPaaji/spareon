@@ -249,7 +249,7 @@ const capabilities = [
           <div className="relative z-10 space-y-4">
             <div className="relative">
               <Image
-                src="/about2.webp" // Replace with machinery/spare part image
+                src="/Images/Spareon/2.jpeg" // Replace with machinery/spare part image
                 alt="Main manufacturing unit"
                 width={800}
                 height={600}
@@ -262,7 +262,7 @@ const capabilities = [
               <div className="w-full">
                 <div className="relative">
                   <Image
-                    src="/blog1.webp" // Replace with detail image
+                    src="/Images/Spareon/1.jpg" // Replace with detail image
                     alt="Industrial product detail 1"
                     width={400}
                     height={300}
@@ -273,7 +273,7 @@ const capabilities = [
               <div className="w-full">
                 <div className="relative">
                   <Image
-                    src="/blog2.webp" // Replace with detail image
+                    src="/blog1.webp" // Replace with detail image
                     alt="Industrial product detail 2"
                     width={400}
                     height={300}

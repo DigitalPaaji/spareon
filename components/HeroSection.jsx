@@ -17,7 +17,7 @@ const slideData = [
     line1Color: "text-[#25B8D9]", // Cyan
     line2: "STRONGER MACHINERY.",
     line2Color: "text-white",     // White
-    description: "Premium Spare Parts for Satake Buhler Rice Polishers",
+    description: "Premium spare parts for Satake and Buhler rice polishers, engineered by Spareon Taiwan.",
     image: "/3.webp",
   },
   {
@@ -26,7 +26,7 @@ const slideData = [
     line1Color: "text-white",     // White
     line2: "SPAREON INDIA",
     line2Color: "text-[#25B8D9]", // Cyan
-    description: "Deep-drawing precision spare parts suppliers. Maintain peak conditions to save money. Hard-wearing stainless steel.",
+    description: "Your authorized partner for high-quality, Taiwan-manufactured precision spare parts. Built for durability and peak performance.",
     image: "/4.png",
   },
 ];

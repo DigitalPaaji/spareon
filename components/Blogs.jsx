@@ -19,6 +19,7 @@ const BlogSection = () => {
 const shuffleArray = (array) => {
   const arr = [...array];
   for (let i = arr.length - 1; i > 0; i--) {
+    // eslint-disable-next-line react-hooks/purity
     const j = Math.floor(Math.random() * (i + 1));
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
@@ -142,7 +143,7 @@ const blogs = shuffleArray(
                       }`}
                     >
                       <img
-                        src={blog.image}
+                        src={`${blog.image}`}
                         alt={blog.title}
                         loading="lazy"
                         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"

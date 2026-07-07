@@ -108,19 +108,33 @@ const ContactPage = () => {
 
       const submitData = new FormData();
 
-      submitData.append(
-        "fields",
-        JSON.stringify({
-          ...formData,
-          ProductImages:
-            productImages.length > 0
-              ? productImages.map((file) => file.name).join(", ")
-              : "No image uploaded",
-          GSTCertificate: gstCertificate
-            ? gstCertificate.name
-            : "No GST certificate uploaded",
-        })
-      );
+  submitData.append(
+  "fields",
+  JSON.stringify({
+    ...formData,
+    Product: formData.Product.join(", "), // Converts array to string for the email
+    ProductImages: productImages.length > 0
+      ? productImages.map((file) => file.name).join(", ")
+      : "No image uploaded",
+    GSTCertificate: gstCertificate
+      ? gstCertificate.name
+      : "No GST certificate uploaded",
+  })
+);
+
+// submitData.append(
+      //   "fields",
+      //   JSON.stringify({
+      //     ...formData,
+      //     ProductImages:
+      //       productImages.length > 0
+      //         ? productImages.map((file) => file.name).join(", ")
+      //         : "No image uploaded",
+      //     GSTCertificate: gstCertificate
+      //       ? gstCertificate.name
+      //       : "No GST certificate uploaded",
+      //   })
+      // );
 
       productImages.forEach((file) => {
         submitData.append("attachments", file);
@@ -149,7 +163,7 @@ const ContactPage = () => {
         Email: "",
         Phone: "",
         Subject: "",
-        Product: "",
+        Product: [],
         Message: "",
       });
 
@@ -161,6 +175,21 @@ const ContactPage = () => {
       setIsSubmitting(false);
     }
   };
+
+      // Add this logic to your component
+    const productOptions = [
+      { group: "Satake Products", items: ["SR Screw Feeder", "Silky Milling Roll", "SR Upper Cylinder", "Silky Screw Roller", "SR Inner Base Ring", "Husker Retainer", "Paddy Table Knife Phase Hinges", "Screen", "Silky Break Holder", "Silky Front Housing", "Silky Inlet Sieve", "Silky Rings Inlet", "Whitener Star Plate", "Sizer Cylinder"] },
+      { group: "Buhler Products", items: ["Silky Front Mouth", "Husker Chute", "Husker Retainer", "Paddy Table Knife Phase Hinges", "Silky DRPA Bush", "Silky DRPA Mixing Tube", "Silky Milling Roll / Screw Feeder", "Sizer Screen Frame", "Sizer Cylinder", "Whitener Base Star Hub", "Whitener Bearing Bush", "Whitener Vertical Break", "Whitener BSPB Base Shout", "Whitener BSPB Screw Feeder", "Whitener Sieve Frame", "Whitener / Silky Screen", "Whitener BSPB Upper Ring Pipe"] }
+    ];
+
+    const toggleProduct = (product) => {
+      setFormData(prev => ({
+        ...prev,
+        Product: prev.Product.includes(product) 
+          ? prev.Product.filter(p => p !== product) 
+          : [...prev.Product, product]
+      }));
+    };
 
   return (
     <>
@@ -331,7 +360,7 @@ yeeson.precision@gmail.com
                     className="w-full bg-transparent border-b-2 border-gray-300 py-3 text-gray-800 focus:outline-none focus:border-[#056483]"
                   />
 
-                  <input
+                  {/* <input
                     type="text"
                     name="Product"
                     required
@@ -339,7 +368,34 @@ yeeson.precision@gmail.com
                     onChange={handelInput}
                     placeholder="Which product are you enquiring about?"
                     className="w-full bg-transparent border-b-2 border-gray-300 py-3 text-gray-800 focus:outline-none focus:border-[#056483]"
-                  />
+                  /> */}
+
+                  <div className="space-y-2">
+  <label className="block text-sm font-medium text-gray-700">Which products are you enquiring about?</label>
+  <div className="max-h-60 overflow-y-auto border border-gray-300 rounded-sm p-3 bg-white">
+    {productOptions.map((cat) => (
+      <div key={cat.group} className="mb-4">
+        <h4 className="text-xs font-bold text-[#056483] uppercase mb-2">{cat.group}</h4>
+        {cat.items.map((item) => (
+          <label key={item} className="flex items-center gap-2 py-1 cursor-pointer text-sm">
+            <input
+              type="checkbox"
+              checked={formData.Product.includes(item)}
+              onChange={() => toggleProduct(item)}
+              className="rounded text-[#056483] focus:ring-[#056483]"
+            />
+            {item}
+          </label>
+        ))}
+      </div>
+    ))}
+  </div>
+  {formData.Product.length > 0 && (
+    <p className="text-xs text-gray-500 italic">{formData.Product.length} products selected</p>
+  )}
+</div>
+
+
   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4"> 
                   <label className="block cursor-pointer rounded-xl border border-dashed border-gray-300 bg-white/60 p-5 hover:border-[#056483] transition">
                     <div className="flex items-center gap-3 text-gray-600">
@@ -410,7 +466,7 @@ yeeson.precision@gmail.com
 
             <div className="fade-up w-full lg:w-7/12 min-h-full overflow-hidden relative shadow-lg group">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4271.373247928821!2d76.42175519999999!3d30.373736199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39102708e4b05f43%3A0x5cac00a43cd7b8f5!2sFocal%20Point%2C%20Patiala!5e1!3m2!1sen!2sin!4v1773475102579!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3466.2698623097453!2d76.98360827553999!3d29.68295477510753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjnCsDQwJzU4LjYiTiA3NsKwNTknMTAuMyJF!5e0!3m2!1sen!2sin!4v1783325542406!5m2!1sen!2sin"
                 className="w-full h-full object-cover"
                 style={{ border: 0, minHeight: "100%" }}
                 
