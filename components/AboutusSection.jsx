@@ -146,7 +146,7 @@ const AboutusSection = () => {
             {/* Replace the src below with your actual YouTube or video URL */}
             <iframe
               className="w-full h-full"
-              src="/video.mp4"
+              src="https://youtube.com/shorts/FzYXsH9cro8?feature=share"
               title="About Spareon India Video"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

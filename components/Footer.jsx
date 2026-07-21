@@ -182,7 +182,7 @@ const Footer = () => {
       <div className="relative border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 py-5 text-center sm:px-6 md:flex-row md:text-left lg:px-8">
           <p className="text-xs text-slate-500">
-            © {new Date().getFullYear()} Spareon India. All rights reserved.
+            © {new Date().getFullYear()} Spareon India. All rights reserved. Designed by <a href="https://www.digimagnifiko.com/">Digimagnifiko </a>
           </p>
 
           <div className="flex items-center gap-5 text-xs text-slate-500">
