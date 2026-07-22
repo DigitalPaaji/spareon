@@ -128,33 +128,37 @@ const AboutusSection = () => {
         </div>
       </div>
 
-      {/* Video Modal Overlay */}
-      {isVideoOpen && (
-        <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 sm:p-8 transition-opacity duration-300">
-          
-          {/* Close Button */}
-          <button
-            onClick={() => setIsVideoOpen(false)}
-            className="absolute top-6 right-6 md:top-10 cursor-pointer md:right-10 text-white/70 hover:text-white transition-colors z-[101] p-2"
-            aria-label="Close video"
-          >
-            <RxCross2 size={36} />
-          </button>
+{/* Video Modal Overlay */}
+{isVideoOpen && (
+  <div
+    className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm sm:p-8"
+    onClick={() => setIsVideoOpen(false)}
+  >
+    <button
+      type="button"
+      onClick={() => setIsVideoOpen(false)}
+      className="absolute right-6 top-6 z-[101] cursor-pointer p-2 text-white/70 transition-colors hover:text-white md:right-10 md:top-10"
+      aria-label="Close video"
+    >
+      <RxCross2 size={36} />
+    </button>
 
-          {/* Video Container */}
-          <div className="relative w-full max-w-5xl aspect-video bg-black rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10 animate-in fade-in zoom-in-95 duration-300">
-            {/* Replace the src below with your actual YouTube or video URL */}
-            <iframe
-              className="w-full h-full"
-              src="https://youtube.com/shorts/FzYXsH9cro8?feature=share"
-              title="About Spareon India Video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      )}
+    <div
+      className="relative aspect-video w-full max-w-5xl overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_0_50px_rgba(0,0,0,0.5)]"
+      onClick={(event) => event.stopPropagation()}
+    >
+      <iframe
+        className="h-full w-full"
+        src="https://www.youtube.com/embed/FzYXsH9cro8?autoplay=1&rel=0"
+        title="About Spareon India Video"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
+      />
+    </div>
+  </div>
+)}
     </section>
   );
 };

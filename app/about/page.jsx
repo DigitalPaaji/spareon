@@ -11,6 +11,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
+import AboutusSection from "@/components/AboutusSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -76,24 +77,7 @@ const AboutPage = () => {
       {/* 6. Philosophy Section */}
       <PhilosophySection />
 
-            {/* 3. Video Section */}
-      <section className="animate-section w-full px-6 lg:px-16 xl:px-24 2xl:px-40 pb-24">
-        <div className="fade-up relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl bg-gray-900">
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
-            className="w-full h-full object-cover"
-          >
-            {/* Add your actual video path here */}
-            <source src="/video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          {/* Subtle overlay for better visual depth */}
-          <div className="absolute inset-0 bg-black/10 pointer-events-none"></div>
-        </div>
-      </section>
+<AboutusSection/>
 
       
  {/* 4. Capabilities Section */}

@@ -38,9 +38,9 @@ const ProductCard = ({ product }) => {
 
       {/* Content */}
       <div className="flex flex-1 flex-col justify-center px-2 pb-2 pt-4 text-center">
-        <h3 className="line-clamp-2 text-sm font-bold leading-relaxed text-[#00263d] transition-colors duration-300 group-hover:text-cyan-600 sm:text-base">
+        <p className="line-clamp-2 text-sm font-bold leading-relaxed text-[#00263d] transition-colors duration-300 group-hover:text-cyan-600 sm:text-base">
           {product.name}
-        </h3>
+        </p>
       </div>
     </div>
   );

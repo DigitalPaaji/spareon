@@ -9,14 +9,14 @@ const ProductType = () => {
       name: "SATAKE",
       subtitle: "Rice Milling & Processing Parts",
   href: "/satake",
-      product:"satake.webp"
+      product:"/Images/satake.webp"
     },
     {
       id: 2,
       name: "BÜHLER",
       subtitle: "Milling & Sorting Machine Parts",
   href: "/buhler",
-      product:"buhler.webp" 
+      product:"/Images/buhler.webp" 
 },
   ];
 
@@ -41,7 +41,7 @@ const ProductType = () => {
         </div>
 
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-14">
+      <div className="grid grid-cols-1 lg:grid-cols-1 gap-14">
   {brands.map((brand) => (
     <Link
       key={brand.id}
