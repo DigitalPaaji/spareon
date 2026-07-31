@@ -31,7 +31,7 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: FaFacebookF,
-      href: "#",
+      href: "https://www.facebook.com/share/p/191eHXKm4Q/",
       label: "Facebook",
     },
     {
@@ -89,7 +89,7 @@ const Footer = () => {
             
           <div>
             <Link href="/" className="inline-flex items-end">
-             <img src="/logo.png" alt="" className="h-24" />
+             <img src="/logo2.webp" alt="" className="h-auto w-full" />
             </Link>
 
             <p className="mt-5 max-w-sm text-sm leading-7 text-slate-400">

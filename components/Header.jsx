@@ -93,13 +93,13 @@ const Header = () => {
         <Link
           href="/"
           onClick={closeMenu}
-          className="group relative flex shrink-0 items-center"
+          className="group relative flex shrink-0 items-center "
           aria-label="Spareon Home"
         >
           <img
-            src="/logo.png"
+            src="/logo2.webp"
             alt="Spareon spare parts and accessories"
-            className="h-16 w-auto object-cover"
+            className="h-full w-full object-cover"
           />
         </Link>
 
@@ -247,7 +247,7 @@ const Header = () => {
         <div className="flex items-center justify-between py-4 px-2 border-b border-slate-100">
           <Link href="/" onClick={closeMenu}>
             <img
-              src="/logo.webp"
+              src="/logo3.png"
               alt="Logo"
               className="h-16 w-auto object-cover"
             />

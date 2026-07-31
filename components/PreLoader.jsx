@@ -53,9 +53,9 @@ const PreLoader = () => {
     >
       <img 
         ref={logoRef}
-        src="/logo.webp" 
+        src="/logo2.webp" 
         alt="Spareon Logo" 
-        className="w-64 md:w-80 h-auto object-contain drop-shadow-lg" 
+        className=" h-auto object-contain drop-shadow-lg" 
       />
     </div>
   );
